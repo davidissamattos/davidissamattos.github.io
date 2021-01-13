@@ -1,0 +1,99 @@
+baseURL = "https://example.com"
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "Website of David Issa Mattos"
+theme = "anatole"
+summarylength = 20
+enableEmoji = true
+enableRobotsTXT = true
+
+# Enable Disqus
+#disqusShortname = ""
+
+# Google Analytics
+#googleAnalytics = "UA-123-45"
+
+# Syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
+[params]
+title = "David Issa Mattos"
+author = "David Issa Mattos"
+copyright = "2020-2021"
+description = "I'm a Ph.D. candidate in Software Engineering in the Department of Computer Science and Engineering at Chalmers University of Technnology. My research is funded by the Wallenberg AI Autonomous Systems and Software program (WASP)"
+profilePicture = "/images/profile.jpg"
+keywords = ""
+favicon = "/favicons/favicon.ico"
+# example ["css/custom.css"]
+customCss = []
+# example ["js/custom.js"]
+customJs = [] 
+mainSections = ["post"]
+#images = ["images/site-feature-image.png"]
+doNotLoadAnimations = false
+displayMode = "light"
+disableThemeSwitcher = true # Theme switcher is enabled by default
+
+[params.simpleAnalytics]
+# enable = true
+# customurl = "https://analytics.example.com"
+
+## Math settings
+[params.math]
+enable = true  # options: true, false. Enable math support globally, default: false. You can always enable math on per page.
+use = "mathjax"  # options: "katex", "mathjax". default is "katex".
+
+## Social links
+# use 'fab' when brand icons, use 'fas' when standard solid icons.
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "e-mail"
+url = "mailto:issamattos.david@gmail.com"
+
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/davidissamattos/"
+
+
+[[params.socialIcons]]
+icon = "fab fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.com/in/david-mattos-43207411b/"
+
+## Menu items
+
+[menu]
+
+  [[menu.main]]
+  name = "Home"
+  identifier = "home"
+  weight = 100
+  url = "/"
+
+  [[menu.main]]
+  name = "Posts"
+  weight = 200
+  identifier = "posts"
+  url = "/post/"
+
+  [[menu.main]]
+  name = "Curriculum vitae"
+  weight = 300
+  identifier = "cv"
+  url = "/cv/"
+
+  [[menu.main]]
+  name = "Publications"
+  weight = 300
+  identifier = "publications"
+  url = "/publications/"
+
+  [[menu.main]]
+  name = "Contact"
+  weight = 400
+  identifier = "contact"
+  url = "/contact/"
