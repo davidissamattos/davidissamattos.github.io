@@ -14,7 +14,6 @@ The overall objective of my Ph.D. research is to analyze how different types of 
 * Main supervisor: Jan Bosch – Chalmers University of Technology
 * Co-supervisor: Helena Holmström Olsson – Malmö University
 
-
 ## Education
 
 * Ph.D. candidate in Software Engineering at Chalmers University of Technology, Sweden (04.2016 – Current). 
