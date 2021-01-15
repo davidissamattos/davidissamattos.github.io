@@ -1,7 +1,6 @@
 ---
-title: "GYSS started this week"
+title: "The GYSS started this week"
 date: 2021-01-12
-Description: ""
 Tags: [GYSS, conference, Nobel]
 draft: false
 slug: gyss-started
