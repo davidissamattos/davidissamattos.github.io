@@ -2,6 +2,7 @@
 title: "The bpcs package is now on CRAN"
 date: 2020-12-09
 draft: false
+Tags: [r, bpcs, Bayesian statistics]
 slug: bpcs-cran
 ---
 

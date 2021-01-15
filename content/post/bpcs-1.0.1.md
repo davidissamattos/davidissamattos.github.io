@@ -2,6 +2,7 @@
 title: "bpcs - release v.1.0.1"
 date: 2020-12-16
 draft: false
+Tags: [r, bpcs, Bayesian statistics]
 slug: bpcs-release-1.0.1
 ---
 
