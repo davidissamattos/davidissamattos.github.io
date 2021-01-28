@@ -1,7 +1,7 @@
 ---
 title: "SE Seminar 2021 - “Bayesian Bradley-Terry models: from primates to machine learning”"
 date: 2021-02-02
-draft: false
+draft: true
 Tags: [r, bpcs, Bayesian statistics, Software engineering]
 slug: se-seminar-2021
 ---
