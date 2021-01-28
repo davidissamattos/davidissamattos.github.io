@@ -58,7 +58,7 @@ In 2020, I have been nominated by the faculty at Chalmers as one the 5 young res
 
 * (2020) Evaluating the applicability of benchmark functions on optimization algorithms, (On-going), 
 * (2020) Developing and analyzing a Bayesian Python package for the Plackett-Luce model. (On-going)
-*	(2019) "Continuous experimentation for software organizations with low control of roadmap and a large distance to users: A case study" - Resulted in a full paper presented at PROFES 2019 [Paper](https://link.springer.com/chapter/10.1007/978-3-030-35333-9_37)
+*	(2019) Continuous experimentation for software organizations with low control of roadmap and a large distance to users: A case study - Resulted in a full paper presented at PROFES 2019 [Paper](https://link.springer.com/chapter/10.1007/978-3-030-35333-9_37)
 
 **Bachelor Thesis**
 
