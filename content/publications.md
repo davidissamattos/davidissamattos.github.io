@@ -8,23 +8,23 @@ publications: true
 
 Below is a complete list of my publications. I utilize the following notation to indicate the type of publication.
 
-T = Thesis, FC = Full Conference paper, SC = Short Conference paper, J = Journal, NP=non peer-reviewed
+T = Thesis, FC = Full Conference paper (peer-reviewed), SC = Short Conference paper (peer-reviewed), J = Journal (peer-reviewed), NP = non peer-reviewed
 
-You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en) 
+You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en)
 
 ## Work in Progress
 
-[J] **Mattos, D.**, Ramos, E. Bayesian Paired-Comparison with the bpcs Package. (In submission)
+[J] **Mattos, D.**, Ramos, E. Bayesian Paired-Comparison with the bpcs Package. arXiv preprint arXiv:2101.11227. (In submission) [preprint](https://arxiv.org/pdf/2101.11227.pdf)
 
 [J] **Mattos, D.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (In submission)
 
-[J] **Mattos, D.**, Bosch, J., & Olsson, H. (2020). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. arXiv preprint arXiv:2010.03783. (In submission)
+[J] **Mattos, D.**, Bosch, J., & Olsson, H. (2020). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. arXiv preprint arXiv:2010.03783. (In submission) [preprint](https://arxiv.org/pdf/2010.03783.pdf)
 
 [FC] Dakkak, A., **Mattos, D.**, & Bosch, J.  Transitioning to Continuous Deployment: A Case study on benefits and Success factors in Software-Intensive Embedded Systems
 
 [FC] Fredriksson, T., **Mattos, D.**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling
 
-[FC] Fredriksson, T., **Mattos, D.**, Bosch, J., & Olsson, H.  Machine Learning Models for Automatic Labeling:A Systematic Literature Review
+[FC] Fredriksson, T., **Mattos, D.**, Bosch, J., & Olsson, H.  Machine Learning Models for Automatic Labeling: A Systematic Literature Review
 
 ## 2020 
 
@@ -41,7 +41,7 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 [FC11] Munappy, A., **Mattos, D.**, Bosch, J., Olsson, H., & Dakkak, A. (2020). From Ad-Hoc Data Analytics to DataOps. In Proceedings of the International Conference on Software and System Processes (pp. 165–174). [Paper](https://dl.acm.org/doi/pdf/10.1145/3379177.3388909)
 
 ## 2019
-[NP1] Gerostathopoulos, I., Konersmann, M., Krusche, S., **Mattos, D.**, Bosch, J., Bures, T., Fitzgerald, B., Goedicke, M., Muccini, H., Olsson, H., & others (2019). Continuous Data-driven Software Engineering-Towards a Research Agenda: Report on the Joint 5th International Workshop on Rapid Continuous Software Engineering (RCoSE 2019) and 1st International WorksACM SIGSOFT Software Engineering Notes, 44(3), 60–64. [Paper](https://dl.acm.org/doi/pdf/10.1145/3356773.3356811)
+[NP1] Gerostathopoulos, I., Konersmann, M., Krusche, S., **Mattos, D.**, Bosch, J., Bures, T., Fitzgerald, B., Goedicke, M., Muccini, H., Olsson, H., & others (2019). Continuous Data-driven Software Engineering-Towards a Research Agenda: Report on the Joint 5th International Workshop on Rapid Continuous Software Engineering (RCoSE 2019) and 1st International Workshop ACM SIGSOFT Software Engineering Notes, 44(3), 60–64. [Paper](https://dl.acm.org/doi/pdf/10.1145/3356773.3356811)
 
 [FC10] Sveningson, R., **Mattos, D.**, & Bosch, J. (2019). Continuous Experimentation for Software Organizations with Low Control of Roadmap and a Large Distance to Users: An Exploratory Case Study. In International Conference on Product-Focused Software Process Improvement (pp. 528–544). [Paper](https://link.springer.com/chapter/10.1007/978-3-030-35333-9_37)
 
