@@ -76,8 +76,8 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 [FC1] **Mattos, D.**, Santos, D., & Nascimento, C. (2016). Development of a low-cost autonomous surface vehicle using MOOS-IvP. In 2016 Annual IEEE Systems Conference (SysCon). [Paper](https://ieeexplore.ieee.org/abstract/document/7490541)
 
-[T2] **Mattos, D.** (2016). Autonomy Implementations for a Low-Cost Autonomous Surface Vehicle Using the MOOS-IvP software. (Master Thesis, Instituto Tecnológico de Aeronáutica, Brasil). Main supervisor: Cairo Lúcio Nascimento Jr. Co-supervisor: Douglas Soares do Santos
+[T2] **Mattos, D.** (2016). Autonomy Implementations for a Low-Cost Autonomous Surface Vehicle Using the MOOS-IvP software. (Master Thesis, Instituto Tecnológico de Aeronáutica, Brasil). Main supervisor: Cairo Lúcio Nascimento Jr. Co-supervisor: Douglas Soares do Santos  [Thesis](/pdf/msc_thesis.pdf)
 
 ## 2014
 
-[T1] **Mattos, D.** (2014). Implementação do software MOOS-IvP em um barco autônomo. (Bachelor Thesis, Instituto Tecnológico de Aeronáutica, Brasil). Main supervisor: Cairo Lúcio Nascimento Jr. Co-supervisor: Douglas Soares do Santos
+[T1] **Mattos, D.** (2014). Implementação do software MOOS-IvP em um barco autônomo. (Bachelor Thesis, Instituto Tecnológico de Aeronáutica, Brasil). Main supervisor: Cairo Lúcio Nascimento Jr. Co-supervisor: Douglas Soares do Santos [Thesis](/pdf/bsc_thesis.pdf)
