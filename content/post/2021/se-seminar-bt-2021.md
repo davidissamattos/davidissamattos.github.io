@@ -1,12 +1,13 @@
 ---
 title: "SE Seminar 2021 - “Bayesian Bradley-Terry models: from primates to machine learning”"
-date: 2021-02-02
-draft: true
+date: 2021-01-29
 Tags: [r, bpcs, Bayesian statistics, Software engineering]
 slug: se-seminar-2021
 ---
 
 This Feb 5th, I will present some of my research around Bradley-Terry models in the SE Seminar at Chalmers.
+
+My goal is to show a the generality of the Bayesian BT model and that it can be used for both behavior research as well as software engineering.
 
 **Bayesian Bradley-Terry models: from primates to machine learning**
 
