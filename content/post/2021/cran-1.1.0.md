@@ -5,7 +5,7 @@ Tags: [r, bpcs, Bayesian statistics]
 slug: bpcs-release-1.1.0
 ---
 
-A new release of the bpcs package is available in Github. This release introduces new models and correct some bugs. This release will be submitted to CRAN and the on-going paper we are writing is based on this release.
+A new release of the bpcs package is available in Github. This release introduces new models and correct some bugs. This release will be submitted to CRAN (not there yet) and the on-going paper we are writing is based on this release.
 
 See below the release notes:
 
@@ -15,3 +15,9 @@ See below the release notes:
 * Some small bug fixes
 
 Unfortunately, we didn't have time to add a function to obtain the posterior distribution of the parameters without accessing the stanfit directly. But I think the other features are worth to update!
+
+To get the latest version of the bpcs package, install it from Github:
+
+```r
+remotes::install_github('davidissamattos/bpcs')
+```
