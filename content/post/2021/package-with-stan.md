@@ -1,9 +1,8 @@
 ---
 title: "Writing package With Stan"
-date: 2021-02-08
+date: 2021-02-15
 Tags: [r, Stan, Bayesian statistics]
 slug: packages-with-stan
-draft: true
 ---
 
 Now, I have been developing the [bpcs](https://github.com/davidissamattos/bpcs) package for the last 4 months I thought of sharing a bit my experience with developing a R package with Stan.
@@ -37,6 +36,7 @@ For version 1.2.0, I decided to change to `cmdstanr` instead of the `rstan` + `r
 * Development and installation is much faster.  `cmdstan` compiles the models faster.
 * New features are available almost immediatly. `rstan` is in version 2.21 while `cmdstan` in vesion 2.26
 * It is now the user responsibility to have a toolchain configured and working and to install `cmdstan`. If Stan changes its own recommended procedures this should not impact the package. `cmdstan` can be easily installed with `cmdstanr`, so this should not be an issue.
+* **Definetely it is worth going from `rstan` to `cmdstanr`**
 
 Here a few thing to remember:
 
@@ -44,7 +44,7 @@ Here a few thing to remember:
 
 Problems that I have encountered so far:
 
-* Generated quantities: as before I was trying to use the generated quantities in Stan for the predict function. However, the same model that compiled and worked with `rstan` stopped working in some of the `bpcs` use cases. The error message did not help much since the csv file is not even created. I **suspect** that this was the error that was appearing with ubsan-clang but now instead of a memory error in CRAN, this is caught in `cmdstan`.
+* Generated quantities: as before I was trying to use the generated quantities in Stan for the predict function. However, the same model that compiled and worked with `rstan` stopped working in some of the `bpcs` use cases. The error message did not help much since the csv file is not even created. I **suspect** that this was the error that was appearing with ubsan-clang but now instead of a memory error in CRAN, this is caught in the `cmdstan`.
   * Based on that I decided to move the generated quantities directly to R. This created a bit of code repetition (in R and in Stan), but now all models work properly. The code is a bit easier to debug and test. Performance impact was small for most of my test cases. I use a for loop for every observation in the prediciton dataset but for each posterior sample is vectorized. In the future, I plan to make everything vectorized, which should improve prediction perfomance for larger datasets. 
 * I my tests, I am sampling several test data sets to test different models combinations. Once in a while I have an error of not finding the csv file. It didn't seem to be systematic or dependent on a model
   * These only appeared with testthat test and not when I run each one independently 
