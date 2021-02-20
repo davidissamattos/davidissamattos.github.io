@@ -1,5 +1,5 @@
 ---
-title: "Writing package With Stan"
+title: "Writing R packages With Stan"
 date: 2021-02-15
 Tags: [r, Stan, Bayesian statistics]
 slug: packages-with-stan
@@ -7,7 +7,7 @@ slug: packages-with-stan
 
 Now, I have been developing the [bpcs](https://github.com/davidissamattos/bpcs) package for the last 4 months I thought of sharing a bit my experience with developing a R package with Stan.
 
-# rstan + rstantools
+## rstan + rstantools
 
 My first experience was with rstan + rstantools. Creating a skeleton package based on rstantools is really fast and straightforward. 
 
@@ -29,7 +29,7 @@ My first experience was with rstan + rstantools. Creating a skeleton package bas
 
 
 
-# cmdstanr
+## cmdstanr
 
 For version 1.2.0, I decided to change to `cmdstanr` instead of the `rstan` + `rstantools` combo. My decision was based on:
 
