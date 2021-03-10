@@ -9,7 +9,7 @@ Now, I have been developing the [bpcs](https://github.com/davidissamattos/bpcs) 
 
 ## rstan + rstantools
 
-My first experience was with rstan + rstantools. Creating a skeleton package based on rstantools is really fast and straightforward. 
+My first experience was with `rstan` + `rstantools`. Creating a skeleton package based on `rstantools` is really fast and straightforward. 
 
 * During installation time, the Stan model is compiled and ready to be called. This creates a longer time in development if you are constantly changing the Stan model
   * My experience is that it is best to have an almost-ready model before starting to iterate with the package. Alternatively, have a script where you can test the model without the need to install. The installation process to compile the model takes longer than just using rstan.
@@ -21,8 +21,8 @@ My first experience was with rstan + rstantools. Creating a skeleton package bas
     2. `devtools::document()`. This will update the package and recompile the model
     3. Restart the r session to make the model reload in the memory
     4. Run`devtools::load_all()` again. Now you are ready to test your recompiled model
-* I found multiple problems when using the `rstan::gqs` function. To give some context, I fitted my model with `rstan::sample` (no problems here) and then I used `rstan::gqs` in a `predict` S3 function with the parameters fitted from the model.
-  * My problem here is that there are/were some small bugs in the generated quantities in Stan. 
+* I found problems when using the `rstan::gqs` function. To give some context, I fitted my model with `rstan::sample` (no problems here) and then I used `rstan::gqs` in a `predict` S3 function with the parameters fitted from the model.
+  * My problem here is that (I think) there are/were some bugs in the generated quantities in Stan. 
     * Estimated parameters could not be optional since they need to be present, so I needed to have transformed parameters to make sure all parameters were present
     * The transformed parameters did not play nice with the generated quantities and the recommended approach is to have the transformed parameters inside the generated quantities. This increases copy and paste in the model
     * With transformed parameters I was doing a lot of subsets (e.g. a parameter was a vector, the transformed parameters was a real and I was assigning to the real variable only the first item of the transformed parameter). Apparently, this creates a problem in CRAN with ubsan-clang where the Stan code is not properly compiled in clang and leads to memory errors in macOS. There are no tools to investigate this and there is a lot of trial and errors with a very specific setup. This lead me to change to `cmdstanr` in the package development.
@@ -36,7 +36,7 @@ For version 1.2.0, I decided to change to `cmdstanr` instead of the `rstan` + `r
 * Development and installation is much faster.  `cmdstan` compiles the models faster.
 * New features are available almost immediatly. `rstan` is in version 2.21 while `cmdstan` in vesion 2.26
 * It is now the user responsibility to have a toolchain configured and working and to install `cmdstan`. If Stan changes its own recommended procedures this should not impact the package. `cmdstan` can be easily installed with `cmdstanr`, so this should not be an issue.
-* **Definetely it is worth going from `rstan` to `cmdstanr`**
+* In my case it was **worth going from `rstan` to `cmdstanr`**
 
 Here a few thing to remember:
 
@@ -50,3 +50,4 @@ Problems that I have encountered so far:
   * These only appeared with testthat test and not when I run each one independently 
   * This creates a problem with CI in Github actions and those nice badges in Github.
 * No matter how much I tried, I could not use `#include` in the Stan model. It might be my poor R/Stan skills, but I just couldn't make it work in a package (I could make it work in a script though).
+* Of course you cannot submit to CRAN while `cmdstanr` is not in CRAN (hopefully they will have it there soon)

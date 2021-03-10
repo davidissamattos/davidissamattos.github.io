@@ -29,3 +29,18 @@ To use the bpcs package, we required to have paired comparisons. However, in exp
 
 
 ### Merge two columns with *NA*
+Coalescing
+
+```r
+data <- data.frame(
+    'a' = c('A','B','C','D','E'),
+    'x' = c(1,2,NA,NA,NA),
+    'y' = c(NA,NA,3,NA,NA),
+    'z' = c(NA,NA,NA,4,NA))
+
+```
+
+
+### Source all files in a directory
+
+
