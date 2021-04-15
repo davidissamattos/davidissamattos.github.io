@@ -3,7 +3,6 @@ title: "bpcs - release v.1.2.0"
 date: 2021-03-10
 Tags: [r, bpcs, Bayesian statistics]
 slug: bpcs-release-1.2.0
-draft: true
 ---
 
 We have a new release of the bpcs package on Github. This release introduces a few new features, removed dependencies and mostly moved from rstan to cmdstanr.
