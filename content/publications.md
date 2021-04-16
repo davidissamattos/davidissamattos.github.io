@@ -12,19 +12,31 @@ T = Thesis, FC = Full Conference paper (peer-reviewed), SC = Short Conference pa
 
 You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en)
 
-## Work in Progress
+## Work in Progress 
 
-[J] **Mattos, D.**, Ramos, E. Bayesian Paired-Comparison with the bpcs Package. arXiv preprint arXiv:2101.11227. (In submission) [preprint](https://arxiv.org/pdf/2101.11227.pdf)
+### In submission
 
-[J] **Mattos, D.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (In submission)
+[J] **Mattos, D.I.**, Ruud, L. Bosch, J., & Olsson, H. (2021). On the Assessment of Benchmark Suites for Algorithm Comparison. arXiv preprint arXiv:2104.07381. (In submission) [preprint](https://arxiv.org/abs/2104.07381)
 
-[J] **Mattos, D.**, Bosch, J., & Olsson, H. (2020). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. arXiv preprint arXiv:2010.03783. (In submission) [preprint](https://arxiv.org/pdf/2010.03783.pdf)
+[J] **Mattos, D.I.**, Ramos, E. Bayesian Paired-Comparison with the bpcs Package. arXiv preprint arXiv:2101.11227. (In submission) [preprint](https://arxiv.org/pdf/2101.11227.pdf)
 
-[FC] Dakkak, A., **Mattos, D.**, & Bosch, J.  Transitioning to Continuous Deployment: A Case study on benefits and Success factors in Software-Intensive Embedded Systems
+[J] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2020) (In submission)
 
-[FC] Fredriksson, T., **Mattos, D.**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling
+[J] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2020). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. arXiv preprint arXiv:2010.03783. (In submission) [preprint](https://arxiv.org/pdf/2010.03783.pdf)
 
-[FC] Fredriksson, T., **Mattos, D.**, Bosch, J., & Olsson, H.  Machine Learning Models for Automatic Labeling: A Systematic Literature Review
+### To be submitted
+
+[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
+
+[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Assessing the Suitability of Semi-Supervised Learning Datasets with Item Response Theory
+
+[FC] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Online A/B experiments with limited sample: a case study in automotive embedded software 
+
+## 2021
+
+[FC] Fredriksson, T., **Mattos, D.I,**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling. To appear at the IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
+
+[FC] Dakkak, A., **Mattos, D.I.**, & Bosch, J. Perceived benefits of Continuous Deployment in Software-Intensive Embedded Systems. To appear at the IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
 
 ## 2020 
 
