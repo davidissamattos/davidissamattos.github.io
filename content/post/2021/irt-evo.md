@@ -12,7 +12,7 @@ Specifically, we utilize a Bayesian Item Response Theory model combined with Fis
 
 We hope that our proposed approach helps researchers to design benchmark suites (with a quantitative assessment) that are more suitable to compare optimization algorithms.
 
-The preprint can be accessed at: https://arxiv.org/abs/2104.07381
+The preprint can be accessed at https://arxiv.org/abs/2104.07381 and the online appendix at https://davidissamattos.github.io/evo-irt/.
 
 If you have any comments or suggestions don't hesitate to contact me!
 
