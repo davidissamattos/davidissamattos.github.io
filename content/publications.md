@@ -34,9 +34,9 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 ## 2021
 
-[FC] Fredriksson, T., **Mattos, D.I,**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling. To appear at the IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
+[FC18] Fredriksson, T., **Mattos, D.I,**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling. To appear at the 45th IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
 
-[FC] Dakkak, A., **Mattos, D.I.**, & Bosch, J. Perceived benefits of Continuous Deployment in Software-Intensive Embedded Systems. To appear at the IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
+[FC17] Dakkak, A., **Mattos, D.I.**, & Bosch, J. Perceived benefits of Continuous Deployment in Software-Intensive Embedded Systems. To appear at the 45th IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
 
 ## 2020 
 
