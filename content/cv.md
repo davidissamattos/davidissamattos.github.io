@@ -1,7 +1,7 @@
 ---
 author: David Issa Mattos
 title: Curriculum vitae
-date: 2020-01-10
+date: 2021-01-10
 description: CV page
 cv: true
 ---
@@ -81,3 +81,6 @@ In 2020, I have been nominated by the faculty at Chalmers as one the 5 young res
 * Machine learning (supervised and reinforcement learning)
 * Research methods (case studies, action research, design science, controlled experiments, quasi experiments, experimental design)
 * Team-working skills
+
+
+Last update: {{< param date >}}.

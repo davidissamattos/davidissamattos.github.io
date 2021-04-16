@@ -12,7 +12,6 @@ T = Thesis, FC = Full Conference paper (peer-reviewed), SC = Short Conference pa
 
 You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en)
 
-Last update: {{< param date >}}
 ## Work in Progress 
 
 ### In submission
@@ -94,3 +93,7 @@ Last update: {{< param date >}}
 ## 2014
 
 [T1] **Mattos, D.** (2014). Implementação do software MOOS-IvP em um barco autônomo. (Bachelor Thesis, Instituto Tecnológico de Aeronáutica, Brasil). Main supervisor: Cairo Lúcio Nascimento Jr. Co-supervisor: Douglas Soares do Santos [Thesis](/pdf/bsc_thesis.pdf)
+
+
+
+Last update: {{< param date >}}.
