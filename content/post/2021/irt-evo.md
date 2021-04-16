@@ -1,7 +1,6 @@
 ---
-title: "On the Assessment of Benchmark Suites for
-Algorithm Comparison"
-date: 2021-05-15
+title: "On the Assessment of Benchmark Suites for Algorithm Comparison"
+date: 2021-04-15
 Tags: [r, item response theory, Bayesian statistics]
 draft: false
 slug: evo-irt-paper
