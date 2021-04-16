@@ -1,7 +1,7 @@
 ---
 author: David Issa Mattos
 title: Publications
-date: 2020-01-10
+date: 2021-04-16
 description: Publications page
 publications: true
 ---
@@ -12,6 +12,7 @@ T = Thesis, FC = Full Conference paper (peer-reviewed), SC = Short Conference pa
 
 You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en)
 
+Last update: {{< param date >}}
 ## Work in Progress 
 
 ### In submission
