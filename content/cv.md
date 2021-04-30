@@ -6,6 +6,8 @@ description: CV page
 cv: true
 ---
 
+A PDF version of this CV (with publications included) can be found [here](/pdf/cv.pdf).
+
 I'm a Ph.D. candidate in Software Engineering in the Department of Computer Science and Engineering at Chalmers University of Technnology. My Ph.D. project is funded by the Wallenberg AI Autonomous Systems and Software program ([WASP](https://wasp-sweden.org/)) and my research is conducted in close collaboration with industry in the context of the [Software Center](https://www.software-center.se/).
 
 The overall objective of my Ph.D. research is to analyze how different types of field experiments can be automated in different domains in collaboration with industrial partners. I analyze how companies in different domains plan and run their experimentation activities and look how different aspects of their experimentation pipeline can be automated and supported in the organization. I have explored the topic of automating field experiments from the perspectives of the software architecture, the algorithms for the experiment execution, and the experimentation process, and focused on two main application domains: the online and the embedded systems domain.
