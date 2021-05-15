@@ -22,8 +22,6 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 [J] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2020) (In submission)
 
-[J] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2020). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. arXiv preprint arXiv:2010.03783. (In submission) [preprint](https://arxiv.org/pdf/2010.03783.pdf)
-
 ### To be submitted
 
 [FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
@@ -33,6 +31,8 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 [FC] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Online A/B experiments with limited sample: a case study in automotive embedded software 
 
 ## 2021
+
+[J2] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2021). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. IEEE Transactions on Evolutionary Computation (DOI:10.1109/TEVC.2021.3081167). arXiv preprint arXiv:2010.03783 [preprint](https://arxiv.org/pdf/2010.03783.pdf)
 
 [FC18] Fredriksson, T., **Mattos, D.I,**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling. To appear at the 45th IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
 
