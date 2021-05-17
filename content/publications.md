@@ -22,13 +22,12 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 [J] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2020) (In submission)
 
-### To be submitted
-
 [FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
 
 [FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Assessing the Suitability of Semi-Supervised Learning Datasets with Item Response Theory
 
 [FC] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Online A/B experiments with limited sample: a case study in automotive embedded software 
+
 
 ## 2021
 
