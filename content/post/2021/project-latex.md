@@ -7,7 +7,7 @@ Tags: ["latex", "overleaf", "writing"]
 
 Over the last five years, I have written papers in different combinations of Word + Mendeley/Zotero, Latex/Overleaf, Google Docs + Zotero, Word Online + Mendeley.
 
-Writing in Word papers in Word together with a good reference manager (Zotero/Mendeley) is a smooth experience, given that the journal/conference provides a good template with styles or macros to format. However, a big drawback is when you have your paper rejected or need to place them in another specific format. Then, a lot of your time goes into making your new template work, copy and pasting figures, re-adjusting captions etc.
+Writing papers in Word together with a good reference manager (Zotero/Mendeley) is a smooth experience, given that the journal/conference provides a good template with styles or macros to format. However, a big drawback is when you have your paper rejected or need to place them in another specific format. Then, a lot of your time goes into making your new template work, copy and pasting figures, re-adjusting captions etc.
 
 Latex (with Overleaf) provides a much better experience for collaborative paper writing compared to Word/Google Docs at the expense that you don't have Grammarly connected (although one can use Chrome extension Overleaf textarea as a workaround). Latex can be a bit daunting if you are starting but having an organized project removes most of the hurdles. 
 
