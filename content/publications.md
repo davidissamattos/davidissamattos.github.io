@@ -28,6 +28,8 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 ## 2021
 
+[FC21]  Dakkak, A., **Mattos, D.I.**, & Bosch, J. Success Factors when Transitioning to Continuous Deployment in Software-Intensive Embedded Systems. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
+
 [FC20] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Assessing the Suitability of Semi-Supervised Learning Datasets with Item Response Theory. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
 
 [FC19] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Size matters? Or not: A/B testing with limited sample in automotive embedded software. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
