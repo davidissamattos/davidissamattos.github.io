@@ -14,22 +14,23 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 ## Work in Progress 
 
+[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
+
 ### In submission
+
+[J] Ramos, E.M.S, **Mattos, D.I.** & Bergstad, C.J. Roundtrip, free-floating and peer-to-peer: A Bayesian behavioral analysis of carsharing. (In submission)
 
 [J] **Mattos, D.I.**, Ruud, L. Bosch, J., & Olsson, H. (2021). On the Assessment of Benchmark Suites for Algorithm Comparison. arXiv preprint arXiv:2104.07381. (In submission) [preprint](https://arxiv.org/abs/2104.07381)
 
-[J] **Mattos, D.I.**, Ramos, E. Bayesian Paired-Comparison with the bpcs Package. arXiv preprint arXiv:2101.11227. (In submission) [preprint](https://arxiv.org/pdf/2101.11227.pdf)
+[J] **Mattos, D.I.**, Ramos, E.M.S Bayesian Paired-Comparison with the bpcs Package. arXiv preprint arXiv:2101.11227. (In submission) [preprint](https://arxiv.org/pdf/2101.11227.pdf)
 
 [J] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2020) (In submission)
 
-[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
-
-[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Assessing the Suitability of Semi-Supervised Learning Datasets with Item Response Theory
-
-[FC] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Online A/B experiments with limited sample: a case study in automotive embedded software 
-
-
 ## 2021
+
+[FC20] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Assessing the Suitability of Semi-Supervised Learning Datasets with Item Response Theory. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
+
+[FC19] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Size matters? Or not: A/B testing with limited sample in automotive embedded software. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
 
 [J2] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2021). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. IEEE Transactions on Evolutionary Computation (DOI:10.1109/TEVC.2021.3081167). arXiv preprint arXiv:2010.03783 [preprint](https://arxiv.org/pdf/2010.03783.pdf)
 
