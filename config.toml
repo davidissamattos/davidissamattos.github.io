@@ -93,6 +93,12 @@ url = "https://www.linkedin.com/in/mattosdi/"
   url = "/publications/"
 
   [[menu.main]]
+  name = "Receitas (em pt)"
+  weight = 300
+  identifier = "receitas"
+  url = "https://receitas.mattosdi.com"
+
+  [[menu.main]]
   name = "Contact"
   weight = 400
   identifier = "contact"
