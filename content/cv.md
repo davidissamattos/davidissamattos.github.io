@@ -8,27 +8,25 @@ cv: true
 
 A PDF version of this CV (with publications included) can be found [here](/pdf/cv.pdf).
 
-I'm a Ph.D. candidate in Software Engineering in the Department of Computer Science and Engineering at Chalmers University of Technnology. My Ph.D. project is funded by the Wallenberg AI Autonomous Systems and Software program ([WASP](https://wasp-sweden.org/)) and my research is conducted in close collaboration with industry in the context of the [Software Center](https://www.software-center.se/).
+I am working as an A/B testing method expert at Volvo Cars. I aim to bring causal inference and data-driven decision-making into automotive software development.
 
-The overall objective of my Ph.D. research is to analyze how different types of field experiments can be automated in different domains in collaboration with industrial partners. I analyze how companies in different domains plan and run their experimentation activities and look how different aspects of their experimentation pipeline can be automated and supported in the organization. I have explored the topic of automating field experiments from the perspectives of the software architecture, the algorithms for the experiment execution, and the experimentation process, and focused on two main application domains: the online and the embedded systems domain.
+I concluded my Ph.D. in Software Engineering in the Department of Computer Science and Engineering at Chalmers University of Technnology (2021). My Ph.D. project was funded by the Wallenberg AI Autonomous Systems and Software program ([WASP](https://wasp-sweden.org/)) and my research is conducted in close collaboration with industry in the context of the [Software Center](https://www.software-center.se/).
 
-In addition to my Ph.D. research, I am also researching Bayesian statistical methods for the analysis of benchmark experiments in the context of evolutionary computing. In collaboration with other researchers at both industry and academia, I have also been actively involved in other areas of computer science such as, automatically labelling, data pipelines, test case evaluation and continuous integration. More recently, I have been collaborating with researchers from psychology in transportation research and developing statistical methods for the analysis of pairwise forced-choice assessment.
+## Current employment
 
-In 2020, I have been nominated by the faculty at Chalmers as one the 5 young researchers to represent Chalmers University at the Global Young Scientist Summit (GYSS) 2021. In this event, I had the opportunity to listen and engage with globally recognized scientific leaders, who are recipients of the Nobel Prize, Fields Medal and Turing award.
-
-* Main supervisor: Jan Bosch – Chalmers University of Technology
-* Co-supervisor: Helena Holmström Olsson – Malmö University
+* Volvo Cars (August/2021 - Current): I am working as an A/B testing method expert in the Analytics and Artificial Inteligence team.
 
 ## Education
 
-* Ph.D. candidate in Software Engineering at Chalmers University of Technology, Sweden (04.2016 – Current).
+* Ph.D. in Software Engineering at Chalmers University of Technology, Sweden (04.2016 – 08.2021).
+  * Thesis: [On Experimentation in Software Intensive Systems](https://research.chalmers.se/publication/524749)
   * Project: Data-driven evolution of software systems.
   *	Main supervisor: Jan Bosch – Chalmers University of Technology
   *	Co-supervisor: Helena Holmström Olsson – Malmö University
 
 * Licentiate of Engineering in Computer Science and Engineering at Chalmers University of Technology, Sweden (2016.04.01– 2018.10.26).
   * Project: Data-driven evolution of software systems.
-  *	Licentiate Thesis: “Towards Automated Experiments in Software Intensive Systems”
+  *	Licentiate Thesis: [Towards Automated Experiments in Software Intensive Systems](https://research.chalmers.se/publication/504558)
   *	Main supervisor: Jan Bosch – Chalmers University of Technology
   *	Co-supervisor: Helena Holmström Olsson – Malmö University
 
@@ -58,13 +56,13 @@ In 2020, I have been nominated by the faculty at Chalmers as one the 5 young res
 
 **Master Thesis**
 
-* (2020) Evaluating the applicability of benchmark functions on optimization algorithms, (On-going), 
-* (2020) Developing and analyzing a Bayesian Python package for the Plackett-Luce model. (On-going)
+* (2020) Evaluating the applicability of benchmark functions on optimization algorithms
+* (2020) Developing and analyzing a Bayesian Python package for the Plackett-Luce model.
 *	(2019) Continuous experimentation for software organizations with low control of roadmap and a large distance to users: A case study - Resulted in a full paper presented at PROFES 2019 [Paper](https://link.springer.com/chapter/10.1007/978-3-030-35333-9_37)
 
 **Bachelor Thesis**
 
-* (2019) An analysis of software engineering practices in R packages available in the CRAN (On-going)
+* (2019) An analysis of software engineering practices in R packages available in the CRAN 
 
 ## Other professional experience
 
@@ -79,6 +77,7 @@ In 2020, I have been nominated by the faculty at Chalmers as one the 5 young res
 * Software engineering
 * Electronics engineering (signal processing, autonomous systems and control systems)
 * Knowledge on different programming languages (C, C++, Python, R, Javascript etc..) and frameworks (Vue, MOOS-IvP, ROS, Keras, TensorFlow, Flask, Hugo etc…)
+* Causal inference
 * Bayesian and frequentist statistics
 * Machine learning (supervised and reinforcement learning)
 * Research methods (case studies, action research, design science, controlled experiments, quasi experiments, experimental design)

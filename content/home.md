@@ -6,4 +6,4 @@ description: Home page
 home: true
 ---
 
-I'm a Ph.D. candidate in Software Engineering in the Department of Computer Science and Engineering at Chalmers University of Technnology. My Ph.D. project is funded by the Wallenberg AI Autonomous Systems and Software program (https://wasp-sweden.org/). My research is conducted in close collaboration with industry in the context of the Software Center (https://www.software-center.se/).
+I'm a researcher and A/B testing expert at Volvo Cars. I am interest in research, statistics and causal inference in the context of software development.

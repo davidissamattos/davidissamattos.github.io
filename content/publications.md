@@ -12,27 +12,33 @@ T = Thesis, FC = Full Conference paper (peer-reviewed), SC = Short Conference pa
 
 You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en)
 
-## Work in Progress 
-
-[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
-
 ### In submission
 
 [J] Ramos, E.M.S, **Mattos, D.I.** & Bergstad, C.J. Roundtrip, free-floating and peer-to-peer: A Bayesian behavioral analysis of carsharing. (In submission)
 
-[J] **Mattos, D.I.**, Ruud, L. Bosch, J., & Olsson, H. (2021). On the Assessment of Benchmark Suites for Algorithm Comparison. arXiv preprint arXiv:2104.07381. (In submission) [preprint](https://arxiv.org/abs/2104.07381)
-
-[J] **Mattos, D.I.**, Ramos, E.M.S Bayesian Paired-Comparison with the bpcs Package. arXiv preprint arXiv:2101.11227. (In submission) [preprint](https://arxiv.org/pdf/2101.11227.pdf)
-
-[J] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2020) (In submission)
+[FC] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?
 
 ## 2021
+
+[T4] **Mattos, D.I.** (2021) On Experimentation in Software Intensive Systems. Ph.D. Thesis, Computer Science and Engineering, Chalmers University of Technology, Sweden. Thesis available [here](https://research.chalmers.se/publication/524749).
+
+[FC25] Zhang, H., Dakkak, A., **Mattos, D.I.**, & Bosch, J., Olsson, H.H. (2021) Towards Federated Learning: A Case Study in the Telecommunication Domain. In the 12th International Conference on Software Business (ICSOB), 2021.
+
+[FC24] Dakkak, A., Zhang, H., **Mattos, D.I.**, & Bosch, J., Olsson, H.H. (2021) Towards Continuous Data Collection from In-service Products: Exploring the Relation Between Data Dimensions and Collection Challenges. In the 28th Asian-Pacific Software Engineering Conference (APSEC), 2021.
+
+[FC23] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H.H., Lantz, J. (2021) Bayesian propensity score matching in automotive embedded software engineering. In the 28th Asian-Pacific Software Engineering Conference (APSEC), 2021.
+
+[J4] **Mattos, D.I.**, Ramos, E.M.S. (2021). Bayesian Paired-Comparison with the bpcs Package. Behavior and Research Methods [preprint](https://arxiv.org/pdf/2101.11227.pdf)
+
+[J3] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H.H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2021) Journal of Software: Evolution and Process [paper](https://onlinelibrary.wiley.com/doi/pdf/10.1002/smr.2390)
 
 [FC21]  Dakkak, A., **Mattos, D.I.**, & Bosch, J. Success Factors when Transitioning to Continuous Deployment in Software-Intensive Embedded Systems. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
 
 [FC20] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Assessing the Suitability of Semi-Supervised Learning Datasets with Item Response Theory. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
 
 [FC19] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H., Lantz, J.  Size matters? Or not: A/B testing with limited sample in automotive embedded software. To appear at the 2021 47th Euromicro Conference on Software Engineering and Advanced Applications (SEAA). 
+
+[NP2] **Mattos, D.I.**, Ruud, L. Bosch, J., & Olsson, H. (2021). On the Assessment of Benchmark Suites for Algorithm Comparison. arXiv preprint arXiv:2104.07381.  [preprint](https://arxiv.org/abs/2104.07381)
 
 [J2] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2021). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. IEEE Transactions on Evolutionary Computation (DOI:10.1109/TEVC.2021.3081167). arXiv preprint arXiv:2010.03783 [preprint](https://arxiv.org/pdf/2010.03783.pdf)
 
