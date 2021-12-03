@@ -28,7 +28,7 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 [FC23] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H.H., Lantz, J. (2021) Bayesian propensity score matching in automotive embedded software engineering. In the 28th Asian-Pacific Software Engineering Conference (APSEC), 2021.
 
-[J4] **Mattos, D.I.**, Ramos, E.M.S. (2021). Bayesian Paired-Comparison with the bpcs Package. Behavior and Research Methods [preprint](https://arxiv.org/pdf/2101.11227.pdf)
+[J4] **Mattos, D.I.**, Ramos, E.M.S. (2021). Bayesian Paired-Comparison with the bpcs Package. Behavior and Research Methods [preprint](https://arxiv.org/pdf/2101.11227.pdf) [paper](https://link.springer.com/article/10.3758/s13428-021-01714-2)
 
 [J3] **Mattos, D.I.**, Dakkak, A., Bosch, J., & Olsson, H.H. The HURRIER Process for Experimentation in Business-to-Business Mission-Critical Systems. (2021) Journal of Software: Evolution and Process [paper](https://onlinelibrary.wiley.com/doi/pdf/10.1002/smr.2390)
 
@@ -40,7 +40,7 @@ You can also access my [Google Scholar profile](https://scholar.google.com/citat
 
 [NP2] **Mattos, D.I.**, Ruud, L. Bosch, J., & Olsson, H. (2021). On the Assessment of Benchmark Suites for Algorithm Comparison. arXiv preprint arXiv:2104.07381.  [preprint](https://arxiv.org/abs/2104.07381)
 
-[J2] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2021). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. IEEE Transactions on Evolutionary Computation (DOI:10.1109/TEVC.2021.3081167). arXiv preprint arXiv:2010.03783 [preprint](https://arxiv.org/pdf/2010.03783.pdf)
+[J2] **Mattos, D.I.**, Bosch, J., & Olsson, H. (2021). Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions. IEEE Transactions on Evolutionary Computation [preprint](https://arxiv.org/pdf/2010.03783.pdf) [paper](https://ieeexplore.ieee.org/document/9432935)
 
 [FC18] Fredriksson, T., **Mattos, D.I,**, Bosch, J., & Olsson, H. An Empirical Evaluation of Algorithms for Data Labeling. To appear at the 45th IEEE Computer Society Signature Conference on Computers, Software and Applications (COMPSAC), 2021.
 
