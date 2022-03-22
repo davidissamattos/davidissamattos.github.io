@@ -21,7 +21,7 @@ pygmentsCodefencesGuessSyntax = true
 [params]
 title = "David Issa Mattos"
 author = "David Issa Mattos"
-copyright = "2020-2021"
+copyright = "2020-2022"
 description = "I am interest in research, statistics and causal inference in the context of software development."
 profilePicture = "/images/profile.jpg"
 keywords = ""
