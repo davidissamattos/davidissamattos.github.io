@@ -96,7 +96,7 @@ url = "https://www.linkedin.com/in/mattosdi/"
   name = "Receitas (em pt)"
   weight = 300
   identifier = "receitas"
-  url = "https://receitas.mattosdi.com"
+  url = "https://davidissamattos.github.io/recipes/"
 
   [[menu.main]]
   name = "Contact"
