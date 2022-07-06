@@ -12,13 +12,19 @@ T = Thesis, FC = Full Conference paper (peer-reviewed), SC = Short Conference pa
 
 You can also access my [Google Scholar profile](https://scholar.google.com/citations?user=h-PQYk4AAAAJ&hl=en)
 
-### In submission
-
-[J] Ramos, E.M.S, **Mattos, D.I.** & Bergstad, C.J. Roundtrip, free-floating and peer-to-peer: A Bayesian behavioral analysis of carsharing. (In submission)
 
 ## 2022
 
-[FC26] Fredriksson, T., **Mattos, D.I.**, Bosch, J., & Olsson, H.  Machine Learning Algorithms for Labeling: Where and How They are Used?. To appear in the IEEE Systems Conference (2022)
+[J7] Ramos, E.M.S, **Mattos, D.I.** & Bergstad, C.J. Roundtrip, free-floating and peer-to-peer: A Bayesian behavioral analysis of carsharing. (In submission) [preprint](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4137919)
+
+[J6] Liu, Y., **Mattos, D.I.**, Bosch, J., & Olsson, H.H., Lantz, J. (2022) Bayesian causal inference in automotive software engineering and online evaluation  (In submission) [preprint](https://arxiv.org/abs/2207.00222)
+
+[J5] Dakkak, A., Bosch, J., Olsson, H.H., **Mattos, D.I.**, Continuous Deployment in Software-Intensive System-of-Systems. (In submission)
+
+[SC2] **Mattos, D.I.**, Liu, Y. (2022) On the Use of Causal Graphical Models for Designing Experiments in the Automotive Domain, To appear in the International Conference on Evaluation and Assessment in Software Engineering (EASE), 2022 [preprint](https://arxiv.org/abs/2204.08743) [paper](https://dl.acm.org/doi/abs/10.1145/3530019.3534979)
+
+
+[FC26] Fredriksson, T., Bosch, J., & Olsson, H. **Mattos, D.I.**. (2022) Machine Learning Algorithms for Labeling: Where and How They are Used?. In the IEEE Systems Conference [paper](https://dl.acm.org/doi/abs/10.1145/3530019.3534979)
 
 ## 2021
 
