@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Latex on David&#39;s public blog</title>
+    <link>http://localhost:1313/tags/latex/</link>
+    <description>Recent content in Latex on David&#39;s public blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 11 May 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Structuring a Latex project for a paper</title>
+      <link>http://localhost:1313/post/2021/project-latex/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2021/project-latex/</guid>
+      <description>&lt;p&gt;Over the last five years, I have written papers in different combinations of Word + Mendeley/Zotero, Latex/Overleaf, Google Docs + Zotero, Word Online + Mendeley.&lt;/p&gt;&#xA;&lt;p&gt;Writing papers in Word together with a good reference manager (Zotero/Mendeley) is a smooth experience, given that the journal/conference provides a good template with styles or macros to format. However, a big drawback is when you have your paper rejected or need to place them in another specific format. Then, a lot of your time goes into making your new template work, copy and pasting figures, re-adjusting captions etc.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

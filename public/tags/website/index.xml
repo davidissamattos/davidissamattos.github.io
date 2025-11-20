@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Website on David&#39;s public blog</title>
+    <link>http://localhost:1313/tags/website/</link>
+    <description>Recent content in Website on David&#39;s public blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 08 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>New website</title>
+      <link>http://localhost:1313/post/2020/hello-world/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2020/hello-world/</guid>
+      <description>&lt;p&gt;As I am finishing now my PhD, I decided it was time to have a personal website with a section to create some small personal blog posts, update my cv etc..&lt;/p&gt;&#xA;&lt;p&gt;I end up going for the following technologies:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Static website based on &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Hugo is simple to use, the pages are written in markdown, it is fast and easy to deploy.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Hugo theme: &lt;a href=&#34;https://themes.gohugo.io/anatole/&#34;&gt;Anatole&lt;/a&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;A clean and easy to use theme.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Netlify for hosting&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Good support for Hugo with CD, so it is just commiting and pushing to Github and Netlify updates and builds your website automatically.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

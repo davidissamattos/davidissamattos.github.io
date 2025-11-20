@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conference on David&#39;s public blog</title>
+    <link>http://localhost:1313/tags/conference/</link>
+    <description>Recent content in Conference on David&#39;s public blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The GYSS started this week</title>
+      <link>http://localhost:1313/post/2021/gyss-started/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2021/gyss-started/</guid>
+      <description>&lt;p&gt;The Global Youth Scientists Summit (GYSS) conference started this week. The GYSS is a gathering of PhD students and post-docs of al over the world to discuss and hear from top scientists and leaders. This year it has 21 speakers that won the Nobel prize, the Fields medal or the Turing award.&lt;/p&gt;&#xA;&lt;p&gt;I had the privelige of being select as one of the 5 PhD/post docs from Chalmers to participate and I will be having a small-session of question and answers discussion with Sir Timothy Gowers (Fields medal 98).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

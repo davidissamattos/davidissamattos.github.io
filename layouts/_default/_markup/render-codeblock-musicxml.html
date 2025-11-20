@@ -1,0 +1,89 @@
+{{- $id := printf "osmd-%d" (add 1 .Ordinal) -}}
+{{- $attributes := .Attributes -}}
+{{- $isMusicXMLFile := false -}}
+{{- $musicXMLContent := "" -}}
+
+{{- if isset $attributes "file" -}}
+  {{- $isMusicXMLFile = true -}}
+  {{- $musicXMLPath := $attributes.file -}}
+  {{- /* File path relative to static folder */ -}}
+  {{- $fullPath := printf "/static/%s" $musicXMLPath -}}
+{{- end -}}
+
+<div class="musicxml-container" id="{{ $id }}-container">
+  <div id="{{ $id }}" class="osmd-viewer"></div>
+</div>
+
+<script>
+  (function() {
+    // Wait for OSMD to be available
+    function initOSMD() {
+      if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+        setTimeout(initOSMD, 100);
+        return;
+      }
+
+      const container = document.getElementById('{{ $id }}');
+      const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container, {
+        autoResize: true,
+        backend: "svg",
+        drawTitle: true,
+      });
+
+      {{- if $isMusicXMLFile }}
+      // Load from file
+      const musicXMLPath = '{{ $attributes.file }}';
+      osmd.load(musicXMLPath).then(function() {
+        osmd.render();
+      }).catch(function(error) {
+        console.error('Error loading MusicXML file:', error);
+        container.innerHTML = '<p style="color: red;">Error loading MusicXML file: ' + musicXMLPath + '</p>';
+      });
+      {{- else }}
+      // Load from inline content
+      const musicXML = `{{ .Inner | safeJS }}`;
+      osmd.load(musicXML).then(function() {
+        osmd.render();
+      }).catch(function(error) {
+        console.error('Error rendering MusicXML:', error);
+        container.innerHTML = '<p style="color: red;">Error rendering inline MusicXML content</p>';
+      });
+      {{- end }}
+    }
+
+    // Start initialization
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initOSMD);
+    } else {
+      initOSMD();
+    }
+  })();
+</script>
+
+<style>
+  .musicxml-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #fffef9;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  .osmd-viewer {
+    min-height: 200px;
+  }
+</style>
+
+<style>
+  .musicxml-container {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  .osmd-viewer {
+    min-height: 200px;
+  }
+</style>

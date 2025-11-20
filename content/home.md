@@ -6,4 +6,4 @@ description: Home page
 home: true
 ---
 
-I'm a researcher and A/B testing expert at Volvo Cars. I am interest in research, statistics and causal inference in the context of software development.
+I'm a researcher and data scientist with an amateur interest in music. My work and research are focused towards statistics, data science/engineering, causal inference and AI. I have like music related projects in particular in the context of music information retrieval.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Music on David&#39;s public blog</title>
+    <link>http://localhost:1313/tags/music/</link>
+    <description>Recent content in Music on David&#39;s public blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Nov 2025 14:47:31 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/music/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test Score</title>
+      <link>http://localhost:1313/music/test-score/</link>
+      <pubDate>Thu, 20 Nov 2025 14:47:31 +0100</pubDate>
+      <guid>http://localhost:1313/music/test-score/</guid>
+      <description>&lt;p&gt;THis is my music&lt;/p&gt;&#xA;&lt;div class=&#34;musicxml-container&#34; id=&#34;osmd-1-container&#34;&gt;&#xD;&#xA;  &lt;div id=&#34;osmd-1&#34; class=&#34;osmd-viewer&#34;&gt;&lt;/div&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&#xD;&#xA;&lt;script&gt;&#xD;&#xA;  (function() {&#xD;&#xA;    &#xD;&#xA;    function initOSMD() {&#xD;&#xA;      if (typeof opensheetmusicdisplay === &#39;undefined&#39; || !opensheetmusicdisplay.OpenSheetMusicDisplay) {&#xD;&#xA;        setTimeout(initOSMD, 100);&#xD;&#xA;        return;&#xD;&#xA;      }&#xD;&#xA;&#xD;&#xA;      const container = document.getElementById(&#39;osmd-1&#39;);&#xD;&#xA;      const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container, {&#xD;&#xA;        autoResize: true,&#xD;&#xA;        backend: &#34;svg&#34;,&#xD;&#xA;        drawTitle: true,&#xD;&#xA;      });&#xD;&#xA;      &#xD;&#xA;      const musicXMLPath = &#39;\/music\/score.musicxml&#39;;&#xD;&#xA;      osmd.load(musicXMLPath).then(function() {&#xD;&#xA;        osmd.render();&#xD;&#xA;      }).catch(function(error) {&#xD;&#xA;        console.error(&#39;Error loading MusicXML file:&#39;, error);&#xD;&#xA;        container.innerHTML = &#39;&lt;p style=&#34;color: red;&#34;&gt;Error loading MusicXML file: &#39; + musicXMLPath + &#39;&lt;/p&gt;&#39;;&#xD;&#xA;      });&#xD;&#xA;    }&#xD;&#xA;&#xD;&#xA;    &#xD;&#xA;    if (document.readyState === &#39;loading&#39;) {&#xD;&#xA;      document.addEventListener(&#39;DOMContentLoaded&#39;, initOSMD);&#xD;&#xA;    } else {&#xD;&#xA;      initOSMD();&#xD;&#xA;    }&#xD;&#xA;  })();&#xD;&#xA;&lt;/script&gt;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;  .musicxml-container {&#xD;&#xA;    margin: 2rem 0;&#xD;&#xA;    padding: 1rem;&#xD;&#xA;    background-color: #fffef9;&#xD;&#xA;    border-radius: 8px;&#xD;&#xA;    overflow-x: auto;&#xD;&#xA;  }&#xD;&#xA;  &#xD;&#xA;  .osmd-viewer {&#xD;&#xA;    min-height: 200px;&#xD;&#xA;  }&#xD;&#xA;&lt;/style&gt;&#xD;&#xA;&#xD;&#xA;&lt;style&gt;&#xD;&#xA;  .musicxml-container {&#xD;&#xA;    margin: 2rem 0;&#xD;&#xA;    padding: 1rem;&#xD;&#xA;    background-color: #f8f9fa;&#xD;&#xA;    border-radius: 8px;&#xD;&#xA;    overflow-x: auto;&#xD;&#xA;  }&#xD;&#xA;  &#xD;&#xA;  .osmd-viewer {&#xD;&#xA;    min-height: 200px;&#xD;&#xA;  }&#xD;&#xA;&lt;/style&gt;</description>
+    </item>
+  </channel>
+</rss>

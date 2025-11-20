@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>On the Assessment of Benchmark Suites for Algorithm Comparison | David&#39;s public blog</title>
+<meta name="title" content="On the Assessment of Benchmark Suites for Algorithm Comparison" />
+<meta name="description" content="Today, we submitted a new paper (On the Assessment of Benchmark Suites for Algorithm Comparison) to the IEEE Transactions on Evolutionary Computing (and of course to Arxiv). In this paper, we challenge the current state-of-the-art suites used for benchmarking in evolutionary computing.
+Specifically, we utilize a Bayesian Item Response Theory model combined with Fisher Information to analyze how two famous benchmark suites (the BBOB and the PBO) actually perfom in practice in terms of the empirical succcess rate. We found that there is a big mismatch between the difficulty levels of these suites and the state-of-the-art algorithms. This leads to benchmark suites that have low discrimination and that are not good at estimating the ability of algorithms to solve a problem." />
+<meta name="keywords" content="r,item response theory,Bayesian statistics," />
+
+
+<meta property="og:url" content="http://localhost:1313/post/2021/evo-irt-paper/">
+  <meta property="og:site_name" content="David&#39;s public blog">
+  <meta property="og:title" content="On the Assessment of Benchmark Suites for Algorithm Comparison">
+  <meta property="og:description" content="Today, we submitted a new paper (On the Assessment of Benchmark Suites for Algorithm Comparison) to the IEEE Transactions on Evolutionary Computing (and of course to Arxiv). In this paper, we challenge the current state-of-the-art suites used for benchmarking in evolutionary computing.
+Specifically, we utilize a Bayesian Item Response Theory model combined with Fisher Information to analyze how two famous benchmark suites (the BBOB and the PBO) actually perfom in practice in terms of the empirical succcess rate. We found that there is a big mismatch between the difficulty levels of these suites and the state-of-the-art algorithms. This leads to benchmark suites that have low discrimination and that are not good at estimating the ability of algorithms to solve a problem.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-04-15T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-04-15T00:00:00+00:00">
+    <meta property="article:tag" content="R">
+    <meta property="article:tag" content="Item Response Theory">
+    <meta property="article:tag" content="Bayesian Statistics">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="On the Assessment of Benchmark Suites for Algorithm Comparison">
+  <meta name="twitter:description" content="Today, we submitted a new paper (On the Assessment of Benchmark Suites for Algorithm Comparison) to the IEEE Transactions on Evolutionary Computing (and of course to Arxiv). In this paper, we challenge the current state-of-the-art suites used for benchmarking in evolutionary computing.
+Specifically, we utilize a Bayesian Item Response Theory model combined with Fisher Information to analyze how two famous benchmark suites (the BBOB and the PBO) actually perfom in practice in terms of the empirical succcess rate. We found that there is a big mismatch between the difficulty levels of these suites and the state-of-the-art algorithms. This leads to benchmark suites that have low discrimination and that are not good at estimating the ability of algorithms to solve a problem.">
+
+
+
+
+  <meta itemprop="name" content="On the Assessment of Benchmark Suites for Algorithm Comparison">
+  <meta itemprop="description" content="Today, we submitted a new paper (On the Assessment of Benchmark Suites for Algorithm Comparison) to the IEEE Transactions on Evolutionary Computing (and of course to Arxiv). In this paper, we challenge the current state-of-the-art suites used for benchmarking in evolutionary computing.
+Specifically, we utilize a Bayesian Item Response Theory model combined with Fisher Information to analyze how two famous benchmark suites (the BBOB and the PBO) actually perfom in practice in terms of the empirical succcess rate. We found that there is a big mismatch between the difficulty levels of these suites and the state-of-the-art algorithms. This leads to benchmark suites that have low discrimination and that are not good at estimating the ability of algorithms to solve a problem.">
+  <meta itemprop="datePublished" content="2021-04-15T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-04-15T00:00:00+00:00">
+  <meta itemprop="wordCount" content="433">
+  <meta itemprop="keywords" content="R,Item Response Theory,Bayesian Statistics">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.2/build/opensheetmusicdisplay.min.js"></script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>David&#39;s public blog</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/post/">Posts</a>
+
+<a href="/music/">Music</a>
+
+<a href="/contact/">Contact</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <p>Today, we submitted a new paper (On the Assessment of Benchmark Suites for Algorithm Comparison) to the IEEE Transactions on Evolutionary Computing (and of course to Arxiv). In this paper, we challenge the current state-of-the-art suites used for benchmarking in evolutionary computing.</p>
+<p>Specifically, we utilize a Bayesian Item Response Theory model combined with Fisher Information to analyze how two famous benchmark suites (the BBOB and the PBO) actually perfom in practice in terms of the empirical succcess rate. We found that there is a big mismatch between the difficulty levels of these suites and the state-of-the-art algorithms. This leads to benchmark suites that have low discrimination and that are not good at estimating the ability of algorithms to solve a problem.</p>
+<p>We hope that our proposed approach helps researchers to design benchmark suites (with a quantitative assessment) that are more suitable to compare optimization algorithms.</p>
+<p>You can read the abstract below:</p>
+<blockquote>
+<p>Benchmark suites, i.e. a collection of benchmark functions, are widely used in the comparison of black-box optimization algorithms. Over the years, research has identified many desired qualities for benchmark suites, such as diverse topology, different difficulties, scalability, representativeness of real-world problems among others. However, while the topology characteristics have been subjected to previous studies, there is no study that has statistically evaluated the difficulty level of benchmark functions, how well they discriminate optimization algorithms and how suitable is a benchmark suite for algorithm comparison. In this paper, we propose the use of an item response theory (IRT) model, the Bayesian two-parameter logistic model for multiple attempts, to statistically evaluate these aspects with respect to the empirical success rate of algorithms. With this model, we can assess the difficulty level of each benchmark, how well they discriminate different algorithms, the ability score of an algorithm, and how much information the benchmark suite adds in the estimation of the ability scores. We demonstrate the use of this model in two well-known benchmark suites, the Black-Box Optimization Benchmark (BBOB) for continuous optimization and the Pseudo Boolean Optimization (PBO) for discrete optimization. We found that most benchmark functions of BBOB suite have high difficulty levels (compared to the optimization algorithms) and low discrimination. For the PBO, most functions have good discrimination parameters but are often considered too easy. We discuss potential uses of IRT in benchmarking, including its use to improve the design of benchmark suites, to measure multiple aspects of the algorithms, and to design adaptive suites.</p>
+</blockquote>
+<ul>
+<li>The preprint can be accessed at <a href="https://arxiv.org/abs/2104.07381">https://arxiv.org/abs/2104.07381</a></li>
+<li>The online appendix (with the code) at <a href="https://davidissamattos.github.io/evo-irt/">https://davidissamattos.github.io/evo-irt/</a>.</li>
+</ul>
+<p>If you have any comments or suggestions don&rsquo;t hesitate to contact me!</p>
+<p>David</p>
+
+</content>
+
+
+
+<p>
+  
+  <a href="http://localhost:1313/tags/r/">#R</a>
+  
+  <a href="http://localhost:1313/tags/item-response-theory/">#Item Response Theory</a>
+  
+  <a href="http://localhost:1313/tags/bayesian-statistics/">#Bayesian Statistics</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>

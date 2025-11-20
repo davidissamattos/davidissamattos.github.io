@@ -13,7 +13,7 @@ As a solution comes the excelent package [`patchwork`](https://patchwork.data-im
 
 In this post, I will walk through the steps to make the final figure below:
 
-![Final panel](/images/posts/rq4-panel.png){50%}
+![Final panel](/images/posts/rq4-panel.png)
 
 The first step is to generate each plot individually, as you want them to look like. E.g. for the first plot (top-left). The `mm_f` is the name of the `brms` model.
 

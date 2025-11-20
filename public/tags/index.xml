@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on David&#39;s public blog</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on David&#39;s public blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 20 Nov 2025 14:47:31 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Music</title>
+      <link>http://localhost:1313/tags/music/</link>
+      <pubDate>Thu, 20 Nov 2025 14:47:31 +0100</pubDate>
+      <guid>http://localhost:1313/tags/music/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Causality</title>
+      <link>http://localhost:1313/tags/causality/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/causality/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DAG</title>
+      <link>http://localhost:1313/tags/dag/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Experimentation</title>
+      <link>http://localhost:1313/tags/experimentation/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/experimentation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Index</title>
+      <link>http://localhost:1313/tags/index/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/index/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Research</title>
+      <link>http://localhost:1313/tags/research/</link>
+      <pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Brms</title>
+      <link>http://localhost:1313/tags/brms/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/brms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ggplot</title>
+      <link>http://localhost:1313/tags/ggplot/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ggplot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Patchwork</title>
+      <link>http://localhost:1313/tags/patchwork/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/patchwork/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R</title>
+      <link>http://localhost:1313/tags/r/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/r/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Baysian Statistics</title>
+      <link>http://localhost:1313/tags/baysian-statistics/</link>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/baysian-statistics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bda</title>
+      <link>http://localhost:1313/tags/bda/</link>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bda/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Paper</title>
+      <link>http://localhost:1313/tags/paper/</link>
+      <pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/paper/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Latex</title>
+      <link>http://localhost:1313/tags/latex/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/latex/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Overleaf</title>
+      <link>http://localhost:1313/tags/overleaf/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/overleaf/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writing</title>
+      <link>http://localhost:1313/tags/writing/</link>
+      <pubDate>Tue, 11 May 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/writing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bayesian Statistics</title>
+      <link>http://localhost:1313/tags/bayesian-statistics/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bayesian-statistics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Item Response Theory</title>
+      <link>http://localhost:1313/tags/item-response-theory/</link>
+      <pubDate>Thu, 15 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/item-response-theory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bpcs</title>
+      <link>http://localhost:1313/tags/bpcs/</link>
+      <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/bpcs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stan</title>
+      <link>http://localhost:1313/tags/stan/</link>
+      <pubDate>Mon, 15 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/stan/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Engineering</title>
+      <link>http://localhost:1313/tags/software-engineering/</link>
+      <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conference</title>
+      <link>http://localhost:1313/tags/conference/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/conference/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GYSS</title>
+      <link>http://localhost:1313/tags/gyss/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/gyss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Nobel</title>
+      <link>http://localhost:1313/tags/nobel/</link>
+      <pubDate>Tue, 12 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/nobel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/tags/hugo/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>http://localhost:1313/tags/website/</link>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/website/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

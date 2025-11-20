@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plot Panels in R (from brms models) | David&#39;s public blog</title>
+<meta name="title" content="Plot Panels in R (from brms models)" />
+<meta name="description" content="This week I had to make a panel with results from 5 different brms models in R. The ggplot2 allows you to do facet_wraps to create a panel with multiple plots but it also requires that you have a well formated dataframe.
+brms provides some functions to create conditional effects plots. The plots are ready and can be easily customized with ggplot2. While the package offers functions to retrieve the data frame, I did not want to recreate the plots. They were already fine." />
+<meta name="keywords" content="r,ggplot,patchwork,brms," />
+
+
+<meta property="og:url" content="http://localhost:1313/post/2021/plot-panels-in-r/">
+  <meta property="og:site_name" content="David&#39;s public blog">
+  <meta property="og:title" content="Plot Panels in R (from brms models)">
+  <meta property="og:description" content="This week I had to make a panel with results from 5 different brms models in R. The ggplot2 allows you to do facet_wraps to create a panel with multiple plots but it also requires that you have a well formated dataframe.
+brms provides some functions to create conditional effects plots. The plots are ready and can be easily customized with ggplot2. While the package offers functions to retrieve the data frame, I did not want to recreate the plots. They were already fine.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-05-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2021-05-20T00:00:00+00:00">
+    <meta property="article:tag" content="R">
+    <meta property="article:tag" content="Ggplot">
+    <meta property="article:tag" content="Patchwork">
+    <meta property="article:tag" content="Brms">
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Plot Panels in R (from brms models)">
+  <meta name="twitter:description" content="This week I had to make a panel with results from 5 different brms models in R. The ggplot2 allows you to do facet_wraps to create a panel with multiple plots but it also requires that you have a well formated dataframe.
+brms provides some functions to create conditional effects plots. The plots are ready and can be easily customized with ggplot2. While the package offers functions to retrieve the data frame, I did not want to recreate the plots. They were already fine.">
+
+
+
+
+  <meta itemprop="name" content="Plot Panels in R (from brms models)">
+  <meta itemprop="description" content="This week I had to make a panel with results from 5 different brms models in R. The ggplot2 allows you to do facet_wraps to create a panel with multiple plots but it also requires that you have a well formated dataframe.
+brms provides some functions to create conditional effects plots. The plots are ready and can be easily customized with ggplot2. While the package offers functions to retrieve the data frame, I did not want to recreate the plots. They were already fine.">
+  <meta itemprop="datePublished" content="2021-05-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2021-05-20T00:00:00+00:00">
+  <meta itemprop="wordCount" content="376">
+  <meta itemprop="keywords" content="R,Ggplot,Patchwork,Brms">
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
+
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
+
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  nav a {
+    margin-right: 8px;
+  }
+
+  strong,
+  b {
+    color: var(--heading-color);
+  }
+
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  main {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
+
+  .title:hover {
+    text-decoration: none;
+  }
+
+  .title h1 {
+    font-size: 1.5em;
+  }
+
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.2/build/opensheetmusicdisplay.min.js"></script>
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>David&#39;s public blog</h2>
+</a>
+<nav>
+<a href="/">Home</a>
+
+<a href="/post/">Posts</a>
+
+<a href="/music/">Music</a>
+
+<a href="/contact/">Contact</a>
+
+</nav>
+</header>
+  <main>
+
+<content>
+  <p>This week I had to make a panel with results from 5 different <a href="http://paul-buerkner.github.io/brms/"><code>brms</code></a> models in R. The <code>ggplot2</code> allows you to do <code>facet_wraps</code> to create a panel with multiple plots but it also requires that you have a well formated dataframe.</p>
+<p><code>brms</code> provides some functions to create conditional effects plots. The plots are ready and can be easily customized with <code>ggplot2</code>. While the package offers functions to retrieve the data frame, I did not want to recreate the plots. They were already fine.</p>
+<p>As a solution comes the excelent package <a href="https://patchwork.data-imaginist.com/"><code>patchwork</code></a>. This package allows you to place plots in a grid with many customizations.</p>
+<p>In this post, I will walk through the steps to make the final figure below:</p>
+<p><img src="/images/posts/rq4-panel.png" alt="Final panel"></p>
+<p>The first step is to generate each plot individually, as you want them to look like. E.g. for the first plot (top-left). The <code>mm_f</code> is the name of the <code>brms</code> model.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>habits_ff <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot</span>(<span style="color:#a6e22e">conditional_effects</span>(m_ff, effects<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa_habits&#34;</span>,categorical <span style="color:#f92672">=</span> T))[[1]] <span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_cartesian</span>(ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Habits&#34;</span>,
+</span></span><span style="display:flex;"><span>       title <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;FF&#34;</span>,
+</span></span><span style="display:flex;"><span>       fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Response&#34;</span>,
+</span></span><span style="display:flex;"><span>       colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Response&#34;</span>)<span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span>(axis.title.x<span style="color:#f92672">=</span><span style="color:#a6e22e">element_blank</span>())
+</span></span></code></pre></div><p>To remove the text labels in the x and y axis, as well as the title of some figures, I removed when plotting each one individually (using <code>element_blank()</code> in the theme). E.g.:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>subjective_rtsba <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">plot</span>(<span style="color:#a6e22e">conditional_effects</span>(m_rtsba, effects<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;fa_subj&#34;</span>,categorical <span style="color:#f92672">=</span> T))[[1]] <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">coord_cartesian</span>(ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">labs</span>(x<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Subjective norm&#34;</span>,
+</span></span><span style="display:flex;"><span>       fill <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Response&#34;</span>,
+</span></span><span style="display:flex;"><span>       colour <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Response&#34;</span>)<span style="color:#f92672">+</span> 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">theme</span>(axis.title.x<span style="color:#f92672">=</span><span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>        axis.text.y <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>        plot.title <span style="color:#f92672">=</span> <span style="color:#a6e22e">element_blank</span>(),
+</span></span><span style="display:flex;"><span>        axis.title.y<span style="color:#f92672">=</span><span style="color:#a6e22e">element_blank</span>())
+</span></span></code></pre></div><p>We do that for every plot and in the figure (lots of copy paste). Then we assemble each variable individually with <code>patchwork</code>. I used <code>plot_layout(nrow=1)</code> to make sure we have only 1 row.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>habits <span style="color:#f92672">&lt;-</span> (habits_ff <span style="color:#f92672">+</span> habits_rtsba <span style="color:#f92672">+</span> habits_rtsbb <span style="color:#f92672">+</span> habits_comb <span style="color:#f92672">+</span> habits_p2p ) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">plot_layout</span>(nrow<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>After doing this for every variable (Habits, Climate, Subjective norm, Trust and Control) we can assemble these five panels in a single figure also with <code>patchwork</code>. I used the options <code>collect</code> to have only one legend and position it in the bottom.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-r" data-lang="r"><span style="display:flex;"><span>panel <span style="color:#f92672">&lt;-</span> (habits <span style="color:#f92672">/</span> climate<span style="color:#f92672">/</span> subjective <span style="color:#f92672">/</span> trust <span style="color:#f92672">/</span>control) <span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">plot_layout</span>(guides <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;collect&#34;</span>) <span style="color:#f92672">&amp;</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">theme</span>(legend.position <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;bottom&#39;</span>)
+</span></span></code></pre></div><p>I exported everything as pdf A4 figure using the export buttom in the plots panel in RStudio.</p>
+<p>I hope that helps others when creating complex but reproducible figures in R (as opposed to gluing them in Photoshop =D).</p>
+
+</content>
+
+
+
+<p>
+  
+  <a href="http://localhost:1313/tags/r/">#R</a>
+  
+  <a href="http://localhost:1313/tags/ggplot/">#Ggplot</a>
+  
+  <a href="http://localhost:1313/tags/patchwork/">#Patchwork</a>
+  
+  <a href="http://localhost:1313/tags/brms/">#Brms</a>
+  
+</p>
+
+  </main>
+  <footer>
+</footer>
+
+  
+</body>
+
+</html>
