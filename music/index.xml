@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Musics on David's public blog</title><link>https://davidissamattos.github.io/music/</link><description>Recent content in Musics on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 20 Nov 2025 14:47:31 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/music/index.xml" rel="self" type="application/rss+xml"/><item><title>Test Score</title><link>https://davidissamattos.github.io/music/test-score/</link><pubDate>Thu, 20 Nov 2025 14:47:31 +0100</pubDate><guid>https://davidissamattos.github.io/music/test-score/</guid><description>&lt;p&gt;THis is my music&lt;/p&gt;
+&lt;div class="musicxml-container" id="osmd-1-container"&gt;
+ &lt;div id="osmd-1" class="osmd-viewer"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ 
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const container = document.getElementById('osmd-1');
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(container, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: true,
+ });
+ 
+ const musicXMLPath = '\/music\/score.musicxml';
+ osmd.load(musicXMLPath).then(function() {
+ osmd.render();
+ }).catch(function(error) {
+ console.error('Error loading MusicXML file:', error);
+ container.innerHTML = '&lt;p style="color: red;"&gt;Error loading MusicXML file: ' + musicXMLPath + '&lt;/p&gt;';
+ });
+ }
+
+ 
+ if (document.readyState === 'loading') {
+ document.addEventListener('DOMContentLoaded', initOSMD);
+ } else {
+ initOSMD();
+ }
+ })();
+&lt;/script&gt;
+
+&lt;style&gt;
+ .musicxml-container {
+ margin: 2rem 0;
+ padding: 1rem;
+ background-color: #fffef9;
+ border-radius: 8px;
+ overflow-x: auto;
+ }
+ 
+ .osmd-viewer {
+ min-height: 200px;
+ }
+&lt;/style&gt;
+
+&lt;style&gt;
+ .musicxml-container {
+ margin: 2rem 0;
+ padding: 1rem;
+ background-color: #f8f9fa;
+ border-radius: 8px;
+ overflow-x: auto;
+ }
+ 
+ .osmd-viewer {
+ min-height: 200px;
+ }
+&lt;/style&gt;</description></item></channel></rss>

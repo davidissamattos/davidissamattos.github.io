@@ -1,1 +1,2 @@
-User-agent: *
+User-Agent: *
+Sitemap: https://davidissamattos.github.io/sitemap.xml

@@ -1,0 +1,136 @@
+<!doctype html><html lang=en><head><meta http-equiv=X-Clacks-Overhead content="GNU Terry Pratchett"><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Hugo Music Score Hook | David's public blog</title><meta name=title content="Hugo Music Score Hook"><meta name=description content="As I wanted to create more posts that are music related and not only programming related, I created a Hugo hook that allows me to display music scores in this blog. I haven&rsquo;t tested that extensively with highly complex scores, but I suppose it works fine as it uses OSMD as the backend music engine.
+The only limitation is that it requires the MusicXML notation, which is pretty standard when sharing scores across applications. Your editing software likely can export to musicxml."><meta name=keywords content><meta property="og:url" content="https://davidissamattos.github.io/post/2025/hugo-music-score-hook/"><meta property="og:site_name" content="David's public blog"><meta property="og:title" content="Hugo Music Score Hook"><meta property="og:description" content="As I wanted to create more posts that are music related and not only programming related, I created a Hugo hook that allows me to display music scores in this blog. I haven’t tested that extensively with highly complex scores, but I suppose it works fine as it uses OSMD as the backend music engine.
+The only limitation is that it requires the MusicXML notation, which is pretty standard when sharing scores across applications. Your editing software likely can export to musicxml."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="post"><meta property="article:published_time" content="2025-11-20T21:09:28+01:00"><meta property="article:modified_time" content="2025-11-20T21:09:28+01:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Hugo Music Score Hook"><meta name=twitter:description content="As I wanted to create more posts that are music related and not only programming related, I created a Hugo hook that allows me to display music scores in this blog. I haven’t tested that extensively with highly complex scores, but I suppose it works fine as it uses OSMD as the backend music engine.
+The only limitation is that it requires the MusicXML notation, which is pretty standard when sharing scores across applications. Your editing software likely can export to musicxml."><meta itemprop=name content="Hugo Music Score Hook"><meta itemprop=description content="As I wanted to create more posts that are music related and not only programming related, I created a Hugo hook that allows me to display music scores in this blog. I haven’t tested that extensively with highly complex scores, but I suppose it works fine as it uses OSMD as the backend music engine.
+The only limitation is that it requires the MusicXML notation, which is pretty standard when sharing scores across applications. Your editing software likely can export to musicxml."><meta itemprop=datePublished content="2025-11-20T21:09:28+01:00"><meta itemprop=dateModified content="2025-11-20T21:09:28+01:00"><meta itemprop=wordCount content="516"><meta name=referrer content="no-referrer-when-downgrade"><style>:root{--width:720px;--font-main:Verdana, sans-serif;--font-secondary:Verdana, sans-serif;--font-scale:1em;--background-color:#fff;--heading-color:#222;--text-color:#444;--link-color:#3273dc;--visited-color:#8b6fcb;--blockquote-color:#222}@media(prefers-color-scheme:dark){:root{--background-color:#01242e;--heading-color:#eee;--text-color:#ddd;--link-color:#8cc2dd;--visited-color:#8b6fcb;--blockquote-color:#ccc}}body{font-family:var(--font-secondary);font-size:var(--font-scale);margin:auto;padding:20px;max-width:var(--width);text-align:left;background-color:var(--background-color);word-wrap:break-word;overflow-wrap:break-word;line-height:1.5;color:var(--text-color)}h1,h2,h3,h4,h5,h6{font-family:var(--font-main);color:var(--heading-color)}a{color:var(--link-color);cursor:pointer;text-decoration:none}a:hover{text-decoration:underline}nav a{margin-right:8px}strong,b{color:var(--heading-color)}button{margin:0;cursor:pointer}time{font-family:monospace;font-style:normal;font-size:15px}main{line-height:1.6}table{width:100%}hr{border:0;border-top:1px dashed}img{max-width:100%}code{font-family:monospace;padding:2px;border-radius:3px}blockquote{border-left:1px solid #999;color:var(--blockquote-color);padding-left:20px;font-style:italic}footer{padding:25px 0;text-align:center}.title:hover{text-decoration:none}.title h1{font-size:1.5em}.inline{width:auto!important}.highlight,.code{border-radius:3px;margin-block-start:1em;margin-block-end:1em;overflow-x:auto}ul.blog-posts{list-style-type:none;padding:unset}ul.blog-posts li{display:flex}ul.blog-posts li span{flex:0 0 130px}ul.blog-posts li a:visited{color:var(--visited-color)}</style><script src=https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.2/build/opensheetmusicdisplay.min.js></script></head><body><header><a href=/ class=title><h2>David's public blog</h2></a><nav><a href=/>Home</a>
+<a href=/post/>Posts</a>
+<a href=/music/>Music</a>
+<a href=/contact/>Contact</a></nav></header><main><content><p>As I wanted to create more posts that are music related and not only programming related, I created a Hugo hook that allows me to display music scores in this blog. I haven&rsquo;t tested that extensively with highly complex scores, but I suppose it works fine as it uses OSMD as the backend music engine.</p><p>The only limitation is that it requires the MusicXML notation, which is pretty standard when sharing scores across applications. Your editing software likely can export to musicxml.</p><p>Let&rsquo;s get to the hook. It is a simple codeblock with musicxml. It supports direct paste of the xml as well as linking to a file in your assets folder</p><h2 id=using-the-hook>Using the hook</h2><h3 id=method-1-link-to-a-musicxml-file>Method 1: Link to a MusicXML file</h3><p>Place your <code>.musicxml</code> or <code>.xml</code> file in the <code>static/</code> folder (e.g., <code>static/music/score.musicxml</code>), then reference it in your markdown:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>``<span style=color:#e6db74>`musicxml {file=&#34;/music/score.musicxml&#34;}
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>``
+</span></span></code></pre></div><h3 id=method-2-inline-musicxml-content>Method 2: Inline MusicXML content</h3><p>Paste the MusicXML content directly in the code block:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span><span style=color:#e6db74>```musicxml
+</span></span></span><span style=display:flex><span><span style=color:#e6db74></span>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span><span style=display:flex><span>&lt;!DOCTYPE score-partwise PUBLIC &#34;-//Recordare//DTD MusicXML 3.1 Partwise//EN&#34; &#34;http://www.musicxml.org/dtds/partwise.dtd&#34;&gt;
+</span></span><span style=display:flex><span>&lt;score-partwise version=&#34;3.1&#34;&gt;
+</span></span><span style=display:flex><span>  &lt;part-list&gt;
+</span></span><span style=display:flex><span>    &lt;score-part id=&#34;P1&#34;&gt;
+</span></span><span style=display:flex><span>      &lt;part-name&gt;Music&lt;/part-name&gt;
+</span></span><span style=display:flex><span>    &lt;/score-part&gt;
+</span></span><span style=display:flex><span>  &lt;/part-list&gt;
+</span></span><span style=display:flex><span>  &lt;part id=&#34;P1&#34;&gt;
+</span></span><span style=display:flex><span>    &lt;measure number=&#34;1&#34;&gt;
+</span></span><span style=display:flex><span>      &lt;attributes&gt;
+</span></span><span style=display:flex><span>        &lt;divisions&gt;1&lt;/divisions&gt;
+</span></span><span style=display:flex><span>        &lt;key&gt;
+</span></span><span style=display:flex><span>          &lt;fifths&gt;0&lt;/fifths&gt;
+</span></span><span style=display:flex><span>        &lt;/key&gt;
+</span></span><span style=display:flex><span>        &lt;time&gt;
+</span></span><span style=display:flex><span>          &lt;beats&gt;4&lt;/beats&gt;
+</span></span><span style=display:flex><span>          &lt;beat-type&gt;4&lt;/beat-type&gt;
+</span></span><span style=display:flex><span>        &lt;/time&gt;
+</span></span><span style=display:flex><span>        &lt;clef&gt;
+</span></span><span style=display:flex><span>          &lt;sign&gt;G&lt;/sign&gt;
+</span></span><span style=display:flex><span>          &lt;line&gt;2&lt;/line&gt;
+</span></span><span style=display:flex><span>        &lt;/clef&gt;
+</span></span><span style=display:flex><span>      &lt;/attributes&gt;
+</span></span><span style=display:flex><span>      &lt;note&gt;
+</span></span><span style=display:flex><span>        &lt;pitch&gt;
+</span></span><span style=display:flex><span>          &lt;step&gt;C&lt;/step&gt;
+</span></span><span style=display:flex><span>          &lt;octave&gt;4&lt;/octave&gt;
+</span></span><span style=display:flex><span>        &lt;/pitch&gt;
+</span></span><span style=display:flex><span>        &lt;duration&gt;4&lt;/duration&gt;
+</span></span><span style=display:flex><span>        &lt;type&gt;whole&lt;/type&gt;
+</span></span><span style=display:flex><span>      &lt;/note&gt;
+</span></span><span style=display:flex><span>    &lt;/measure&gt;
+</span></span><span style=display:flex><span>  &lt;/part&gt;
+</span></span><span style=display:flex><span>&lt;/score-partwise&gt;
+</span></span><span style=display:flex><span><span style=color:#e6db74>```</span>
+</span></span></code></pre></div><h2 id=adding-it-to-your-blog>Adding it to your blog</h2><p>Create the file layouts/_default/_markup/render-codeblock-musicxml.html</p><p>Paste the content (a mix of Hugo syntax with HTML, JS and CSS)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span>{{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$id</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>printf</span> <span style=color:#e6db74>&#34;osmd-%d&#34;</span> (<span style=color:#a6e22e>add</span> <span style=color:#ae81ff>1</span> .<span style=color:#a6e22e>Ordinal</span>) <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$attributes</span> <span style=color:#f92672>:=</span> .<span style=color:#a6e22e>Attributes</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$isMusicXMLFile</span> <span style=color:#f92672>:=</span> <span style=color:#66d9ef>false</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$musicXMLContent</span> <span style=color:#f92672>:=</span> <span style=color:#e6db74>&#34;&#34;</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>-</span> <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>isset</span> <span style=color:#a6e22e>$attributes</span> <span style=color:#e6db74>&#34;file&#34;</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>  {{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$isMusicXMLFile</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>  {{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$musicXMLPath</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>$attributes</span>.<span style=color:#a6e22e>file</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>  {{<span style=color:#f92672>-</span> <span style=color:#75715e>/* File path relative to static folder */</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>  {{<span style=color:#f92672>-</span> <span style=color:#a6e22e>$fullPath</span> <span style=color:#f92672>:=</span> <span style=color:#a6e22e>printf</span> <span style=color:#e6db74>&#34;/static/%s&#34;</span> <span style=color:#a6e22e>$musicXMLPath</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>{{<span style=color:#f92672>-</span> <span style=color:#a6e22e>end</span> <span style=color:#f92672>-</span>}}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>div</span> <span style=color:#66d9ef>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;musicxml-container&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $id }}-container&#34;</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&lt;</span><span style=color:#a6e22e>div</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;{{ $id }}&#34;</span> <span style=color:#66d9ef>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;osmd-viewer&#34;</span><span style=color:#f92672>&gt;&lt;</span><span style=color:#960050;background-color:#1e0010>/div&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/div&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  (<span style=color:#66d9ef>function</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Wait for OSMD to be available
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initOSMD</span>() {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>typeof</span> <span style=color:#a6e22e>opensheetmusicdisplay</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;undefined&#39;</span> <span style=color:#f92672>||</span> <span style=color:#f92672>!</span><span style=color:#a6e22e>opensheetmusicdisplay</span>.<span style=color:#a6e22e>OpenSheetMusicDisplay</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>initOSMD</span>, <span style=color:#ae81ff>100</span>);
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>;
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>container</span> <span style=color:#f92672>=</span> document.<span style=color:#a6e22e>getElementById</span>(<span style=color:#e6db74>&#39;{{ $id }}&#39;</span>);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>osmd</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>opensheetmusicdisplay</span>.<span style=color:#a6e22e>OpenSheetMusicDisplay</span>(<span style=color:#a6e22e>container</span>, {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>autoResize</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>backend</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;svg&#34;</span>,
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>drawTitle</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>      {{<span style=color:#f92672>-</span> <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>$isMusicXMLFile</span> }}
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// Load from file
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>musicXMLPath</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;{{ $attributes.file }}&#39;</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>load</span>(<span style=color:#a6e22e>musicXMLPath</span>).<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>function</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>render</span>();
+</span></span><span style=display:flex><span>      }).<span style=color:#66d9ef>catch</span>(<span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>error</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#39;Error loading MusicXML file:&#39;</span>, <span style=color:#a6e22e>error</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>container</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&lt;p style=&#34;color: red;&#34;&gt;Error loading MusicXML file: &#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>musicXMLPath</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#39;&lt;/p&gt;&#39;</span>;
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      {{<span style=color:#f92672>-</span> <span style=color:#66d9ef>else</span> }}
+</span></span><span style=display:flex><span>      <span style=color:#75715e>// Load from inline content
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>musicXML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`{{ .Inner | safeJS }}`</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>load</span>(<span style=color:#a6e22e>musicXML</span>).<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>function</span>() {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>render</span>();
+</span></span><span style=display:flex><span>      }).<span style=color:#66d9ef>catch</span>(<span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>error</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#e6db74>&#39;Error rendering MusicXML:&#39;</span>, <span style=color:#a6e22e>error</span>);
+</span></span><span style=display:flex><span>        <span style=color:#a6e22e>container</span>.<span style=color:#a6e22e>innerHTML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;&lt;p style=&#34;color: red;&#34;&gt;Error rendering inline MusicXML content&lt;/p&gt;&#39;</span>;
+</span></span><span style=display:flex><span>      });
+</span></span><span style=display:flex><span>      {{<span style=color:#f92672>-</span> <span style=color:#a6e22e>end</span> }}
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>// Start initialization
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (document.<span style=color:#a6e22e>readyState</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;loading&#39;</span>) {
+</span></span><span style=display:flex><span>      document.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#39;DOMContentLoaded&#39;</span>, <span style=color:#a6e22e>initOSMD</span>);
+</span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>initOSMD</span>();
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  })();
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/script&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>style</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>musicxml</span><span style=color:#f92672>-</span><span style=color:#a6e22e>container</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>margin</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span><span style=color:#a6e22e>rem</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>padding</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span><span style=color:#a6e22e>rem</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>background</span><span style=color:#f92672>-</span><span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#960050;background-color:#1e0010>#</span><span style=color:#a6e22e>fffef9</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>border</span><span style=color:#f92672>-</span><span style=color:#a6e22e>radius</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>overflow</span><span style=color:#f92672>-</span><span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>auto</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>osmd</span><span style=color:#f92672>-</span><span style=color:#a6e22e>viewer</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>min</span><span style=color:#f92672>-</span><span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span><span style=color:#a6e22e>px</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/style&gt;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>style</span><span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>musicxml</span><span style=color:#f92672>-</span><span style=color:#a6e22e>container</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>margin</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>2</span><span style=color:#a6e22e>rem</span> <span style=color:#ae81ff>0</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>padding</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>1</span><span style=color:#a6e22e>rem</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>background</span><span style=color:#f92672>-</span><span style=color:#a6e22e>color</span><span style=color:#f92672>:</span> <span style=color:#960050;background-color:#1e0010>#</span><span style=color:#a6e22e>f8f9fa</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>border</span><span style=color:#f92672>-</span><span style=color:#a6e22e>radius</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>8</span><span style=color:#a6e22e>px</span>;
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>overflow</span><span style=color:#f92672>-</span><span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>auto</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  .<span style=color:#a6e22e>osmd</span><span style=color:#f92672>-</span><span style=color:#a6e22e>viewer</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>min</span><span style=color:#f92672>-</span><span style=color:#a6e22e>height</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>200</span><span style=color:#a6e22e>px</span>;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#960050;background-color:#1e0010>/style&gt;</span>
+</span></span></code></pre></div><p>Now you only need to add the library to your header.</p><p>Add this line to your custom header in partials. Or download the script to a js in static (get some help from chatgpt/copilot/claude)</p><p><code>&lt;script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.2/build/opensheetmusicdisplay.min.js">&lt;/script></code></p></content><p></p></main><footer></footer></body></html>

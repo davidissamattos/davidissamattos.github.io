@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Music21 on David's public blog</title><link>https://davidissamattos.github.io/tags/music21/</link><description>Recent content in Music21 on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 19 Nov 2025 21:06:45 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/tags/music21/index.xml" rel="self" type="application/rss+xml"/><item><title>Music Score Streamlit Component</title><link>https://davidissamattos.github.io/post/2025/music-score-streamlit-component/</link><pubDate>Wed, 19 Nov 2025 21:06:45 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/music-score-streamlit-component/</guid><description>&lt;p&gt;This week I released a new Python package in pip that allows you to display music sheets in Streamlit applications.&lt;/p&gt;
+&lt;p&gt;Pypi: &lt;a href="https://pypi.org/project/streamlit-music-score/"&gt;https://pypi.org/project/streamlit-music-score/&lt;/a&gt;
+Github: &lt;a href="https://github.com/davidissamattos/streamlit-music-score"&gt;https://github.com/davidissamattos/streamlit-music-score&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="installation"&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Just run:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pip install streamlit-music-score&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It has dependencies on music21 and streamlit&lt;/p&gt;
+&lt;h2 id="intro"&gt;Intro&lt;/h2&gt;
+&lt;p&gt;This pacakge basically allows you to display music scores coming from a lot of different formats, including MusicXML, abc, lilypond and any other of the list. Conversion between these and MusicXML is handled by music21&lt;/p&gt;</description></item></channel></rss>
