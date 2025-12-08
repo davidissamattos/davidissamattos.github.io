@@ -2,7 +2,7 @@ baseURL = "https://davidissamattos.github.io"
 languageCode = "en"
 DefaultContentLanguage = "en"
 title = "David's public blog"
-theme = "hugo-bearblog"
+theme = ["hugo-musicxml-shortcode","hugo-bearblog"]
 enableEmoji = true
 enableRobotsTXT = true
 
