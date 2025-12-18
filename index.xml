@@ -1,4 +1,928 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on David's public blog</title><link>https://davidissamattos.github.io/</link><description>Recent content in Home on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 16 Dec 2025 16:26:43 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Notare</title><link>https://davidissamattos.github.io/post/2025/notare/</link><pubDate>Tue, 16 Dec 2025 16:26:43 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/notare/</guid><description>&lt;p&gt;Today, I release a command line utility to handle transformations and processing of music scores without opening them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on David's public blog</title><link>https://davidissamattos.github.io/</link><description>Recent content in Home on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 18 Dec 2025 12:30:05 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Tabbouleh</title><link>https://davidissamattos.github.io/receitas/saladas/tabbouleh/</link><pubDate>Thu, 18 Dec 2025 12:30:05 +0100</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/tabbouleh/</guid><description>&lt;h2 id="ingredientes"&gt;Ingredientes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;1/2 xícara de azeite de oliva extra-virgem&lt;/li&gt;
+&lt;li&gt;3 colheres de sopa de suco de limão fresco&lt;/li&gt;
+&lt;li&gt;1 dente de alho ralado&lt;/li&gt;
+&lt;li&gt;1/2 colher de chá de sal marinho&lt;/li&gt;
+&lt;li&gt;1/2 colher de chá de coentro em pó&lt;/li&gt;
+&lt;li&gt;1 pitada de canela&lt;/li&gt;
+&lt;li&gt;1-2 maços de salsinha picada
+~~- 1 xícara de pepino inglês em cubos ~~&lt;/li&gt;
+&lt;li&gt;1 xícara de tomate sem sementes em cubos&lt;/li&gt;
+&lt;li&gt;1 xícara de trigo para quibe/bulgur&lt;/li&gt;
+&lt;li&gt;1/2 xícara de hortelã fresca picada finamente&lt;/li&gt;
+&lt;li&gt;2 cebolinhas fatiadas&lt;/li&gt;
+&lt;li&gt;Folhas para salada&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="passo-a-passo"&gt;Passo-a-passo&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Em uma tigela grande, misture com um batedor o azeite, o suco de limão, o alho, o sal, o coentro e a canela.&lt;/li&gt;
+&lt;li&gt;Acrescente a salsa, o pepino, o tomate, o trigo para quibe, a hortelã e a cebolinha.&lt;/li&gt;
+&lt;li&gt;Misture bem até incorporar.&lt;/li&gt;
+&lt;li&gt;Ajuste o sal a gosto e leve à geladeira até a hora de servir.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="observações"&gt;Observações&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Como cozinhar o trigo para quibe:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>As Rosas Nao Falam</title><link>https://davidissamattos.github.io/music/as-rosas-nao-falam/</link><pubDate>Thu, 18 Dec 2025 11:25:20 +0100</pubDate><guid>https://davidissamattos.github.io/music/as-rosas-nao-falam/</guid><description>&lt;p&gt;Melodia e partitura de: As Rosas Não Falam - Cartola&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fAs%20Rosas%20N%c3%a3o%20Falam.musicxml&amp;title=As%20Rosas%20N%c3%a3o%20Falam" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/As Rosas Não Falam.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Preciso Me Encontrar</title><link>https://davidissamattos.github.io/music/preciso-me-encontrar/</link><pubDate>Thu, 18 Dec 2025 11:24:40 +0100</pubDate><guid>https://davidissamattos.github.io/music/preciso-me-encontrar/</guid><description>&lt;p&gt;Melodia e partitura de: Preciso Me Encontrar - Cartola&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fPreciso%20me%20encontar%20-%20Cartola.musicxml&amp;title=Preciso%20me%20encontar%20-%20Cartola" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/Preciso me encontar - Cartola.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Quem Sabe Isso Quer Dizer Amor</title><link>https://davidissamattos.github.io/music/quem-sabe-isso-quer-dizer-amor/</link><pubDate>Thu, 18 Dec 2025 11:24:02 +0100</pubDate><guid>https://davidissamattos.github.io/music/quem-sabe-isso-quer-dizer-amor/</guid><description>&lt;p&gt;Melodia e partitura de: Quem Sabe Isso Quer Dizer Amor - Milton Nascimento&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fQuem%20Sabe%20Isso%20Quer%20Dizer%20Amor.musicxml&amp;title=Quem%20Sabe%20Isso%20Quer%20Dizer%20Amor" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/Quem Sabe Isso Quer Dizer Amor.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>João E Maria</title><link>https://davidissamattos.github.io/music/joao-e-maria/</link><pubDate>Thu, 18 Dec 2025 11:22:42 +0100</pubDate><guid>https://davidissamattos.github.io/music/joao-e-maria/</guid><description>&lt;p&gt;Melodia e partitura de: João E Maria de Chico Buarque&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fJo%c3%a3o%20e%20Maria.musicxml&amp;title=Jo%c3%a3o%20e%20Maria" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/João e Maria.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Tocando em Frente - Almir Sater</title><link>https://davidissamattos.github.io/music/tocando-em-frente/</link><pubDate>Wed, 17 Dec 2025 16:11:43 +0100</pubDate><guid>https://davidissamattos.github.io/music/tocando-em-frente/</guid><description>&lt;p&gt;Melodia de &amp;ldquo;Tocando em Frente&amp;rdquo; de Almir Sater&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fTocando%20em%20Frente.musicxml&amp;title=Tocando%20em%20frente%20-%20Almir%20sater" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/Tocando em Frente.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Notare</title><link>https://davidissamattos.github.io/post/2025/notare/</link><pubDate>Tue, 16 Dec 2025 16:26:43 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/notare/</guid><description>&lt;p&gt;Today, I release a command line utility to handle transformations and processing of music scores without opening them.&lt;/p&gt;
 &lt;p&gt;I have been working with digitalization of trumpet resources, and that generates A LOT of files, and sometimes we need to modify and analyze them in bulk using scripts. Of course we can create python scripts for everything&amp;hellip; But instead I decided to create a command line tool to do that work in a more isolated manner. It is called &lt;code&gt;notare&lt;/code&gt; and can be installed with Python using pip. It works well on Windows/Linux/Mac (but I am only placing some Windows examples below)&lt;/p&gt;</description></item><item><title>Hugo Music Score Shortcode</title><link>https://davidissamattos.github.io/post/2025/hugo-music-score-shortcode/</link><pubDate>Mon, 08 Dec 2025 20:09:28 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/hugo-music-score-shortcode/</guid><description>&lt;p&gt;Last month I have been using a codeblock hook to show scores using hugo. While it works, passing parameters in codeblocks is a pain.&lt;/p&gt;
 &lt;p&gt;I decided to convert it to a better system, i.e. shortcode, with lots of options. Still using OSMD as the display source&lt;/p&gt;
 &lt;p&gt;You can easily add the shortcode by adding it as a submodule. You can see the code here on (Github)[https://github.com/davidissamattos/hugo-musicxml-shortcode]:&lt;/p&gt;
@@ -28,7 +952,7 @@ Github: &lt;a href="https://github.com/davidissamattos/streamlit-music-score"&gt
 &lt;p&gt;This pacakge basically allows you to display music scores coming from a lot of different formats, including MusicXML, abc, lilypond and any other of the list. Conversion between these and MusicXML is handled by music21&lt;/p&gt;</description></item><item><title>Causal graphs in automotive experimentation</title><link>https://davidissamattos.github.io/post/2022/causal-dag/</link><pubDate>Tue, 03 May 2022 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/post/2022/causal-dag/</guid><description>&lt;p&gt;Today, we received the news that our (very short) paper on the use of Causal DAGs for designing experiments was accepted to be presented in EASE 2022.&lt;/p&gt;
 &lt;p&gt;The paper argues that we should design our experiments with the use of DAGs. That improves communication between stakeholders, allows us to verify our domain knowledge with causal discovery checks and even calculate directs and indirect effects that are not possible with just the experiment result (which only gives the total effect).&lt;/p&gt;</description></item><item><title>Updates</title><link>https://davidissamattos.github.io/post/2021/updates_nov/</link><pubDate>Mon, 29 Nov 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/post/2021/updates_nov/</guid><description>&lt;p&gt;I hope now that I have a bit more time, I can write more here.&lt;/p&gt;
 &lt;p&gt;In the last few months, I concluded my Ph.D.! The dissertation can be found &lt;a href="https://research.chalmers.se/publication/524749"&gt;here&lt;/a&gt; and it is a wrap-up of these last 5 years of publications.&lt;/p&gt;
-&lt;p&gt;At the same time, I started my new role as an A/B testing method expert at Volvo Cars, where we will start running A/B testing to continuously improve the software present in our vehicles!&lt;/p&gt;</description></item><item><title>Plot Panels in R (from brms models)</title><link>https://davidissamattos.github.io/post/2021/plot-panels-in-r/</link><pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/post/2021/plot-panels-in-r/</guid><description>&lt;p&gt;This week I had to make a panel with results from 5 different &lt;a href="http://paul-buerkner.github.io/brms/"&gt;&lt;code&gt;brms&lt;/code&gt;&lt;/a&gt; models in R. The &lt;code&gt;ggplot2&lt;/code&gt; allows you to do &lt;code&gt;facet_wraps&lt;/code&gt; to create a panel with multiple plots but it also requires that you have a well formated dataframe.&lt;/p&gt;
+&lt;p&gt;At the same time, I started my new role as an A/B testing method expert at Volvo Cars, where we will start running A/B testing to continuously improve the software present in our vehicles!&lt;/p&gt;</description></item><item><title>Panqueca americana</title><link>https://davidissamattos.github.io/receitas/brunch/american-pancakes/</link><pubDate>Wed, 28 Jul 2021 07:16:25 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/brunch/american-pancakes/</guid><description>Panqueca mais alta e macia</description></item><item><title>Crepes/Panqueca salgada</title><link>https://davidissamattos.github.io/receitas/massas/crepes/</link><pubDate>Fri, 23 Jul 2021 10:56:40 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/massas/crepes/</guid><description>Massa de crepe ou de panqueca salgada</description></item><item><title>Pão de hamburger</title><link>https://davidissamattos.github.io/receitas/massas/hamburger-bread/</link><pubDate>Fri, 23 Jul 2021 10:38:08 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/massas/hamburger-bread/</guid><description>Pão de hamburguer a base de batata doce feito em uma tarde</description></item><item><title>Saturday White Bread</title><link>https://davidissamattos.github.io/receitas/massas/saturday-white-bread/</link><pubDate>Tue, 20 Jul 2021 10:27:25 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/massas/saturday-white-bread/</guid><description>Pão branco clássico para ser feito em um único dia</description></item><item><title>Frappuccino</title><link>https://davidissamattos.github.io/receitas/outros/frappuccino/</link><pubDate>Sat, 17 Jul 2021 10:37:10 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/outros/frappuccino/</guid><description>Frappuccino feito com cold brew batido no liquidificador</description></item><item><title>Pêra, arroz preto, avelã e feta</title><link>https://davidissamattos.github.io/receitas/saladas/pear-black-rice/</link><pubDate>Thu, 15 Jul 2021 10:30:59 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/pear-black-rice/</guid><description>Salada simples a base de arroz preto para misturar com folhas</description></item><item><title>Salada chaat</title><link>https://davidissamattos.github.io/receitas/saladas/chaat-salad/</link><pubDate>Thu, 15 Jul 2021 10:30:19 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/chaat-salad/</guid><description>Salada com romã, coentro e grão-de-bico</description></item><item><title>Salada de atum, macarrão e brocolis</title><link>https://davidissamattos.github.io/receitas/saladas/tuna-broccoli-pasta-salad/</link><pubDate>Thu, 15 Jul 2021 10:30:05 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/tuna-broccoli-pasta-salad/</guid><description>Salada rápida que dá para uma refeicão completa</description></item><item><title>Molho barbecue</title><link>https://davidissamattos.github.io/receitas/saladas/barbecue-sauce/</link><pubDate>Thu, 15 Jul 2021 10:29:46 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/barbecue-sauce/</guid><description>Molho barbecue rápido com base de ketchup</description></item><item><title>Salada de ramen</title><link>https://davidissamattos.github.io/receitas/saladas/ramen-salad/</link><pubDate>Thu, 15 Jul 2021 10:29:33 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/ramen-salad/</guid><description>Receita a base de noodles, yogurt, coentro e pêra</description></item><item><title>Humus</title><link>https://davidissamattos.github.io/receitas/saladas/humus/</link><pubDate>Thu, 15 Jul 2021 10:29:18 +0200</pubDate><guid>https://davidissamattos.github.io/receitas/saladas/humus/</guid><description>Receita rápida de humus com grão-de-bico em lata</description></item><item><title>Café gelado</title><link>https://davidissamattos.github.io/receitas/outros/cold-brew-coffee/</link><pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/outros/cold-brew-coffee/</guid><description>Receita de cold brew coffee</description></item><item><title>Concentrado de limonada com morango</title><link>https://davidissamattos.github.io/receitas/outros/lemonade/</link><pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/outros/lemonade/</guid><description>Limonada com morango concentrada</description></item><item><title>Muffin de blueberry</title><link>https://davidissamattos.github.io/receitas/brunch/blueberry-muffins/</link><pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/brunch/blueberry-muffins/</guid><description>Muffin simple e rápido de blueberry.</description></item><item><title>Pão de queijo</title><link>https://davidissamattos.github.io/receitas/brunch/pao-de-queijo/</link><pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/brunch/pao-de-queijo/</guid><description>Receita de pão de queijo adaptada para fazer na Suécia.</description></item><item><title>Tiramisu</title><link>https://davidissamattos.github.io/receitas/sobremesa/tiramisu/</link><pubDate>Wed, 14 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/sobremesa/tiramisu/</guid><description>Receita clássica de tiramisu com mascarpone e lady fingers já prontos</description></item><item><title>Mousse de chocolate fácil</title><link>https://davidissamattos.github.io/receitas/sobremesa/chocolate-mousse/</link><pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/sobremesa/chocolate-mousse/</guid><description>Mousse de chocolate fácil de fazer com base de leite condensado.</description></item><item><title>Pão de forma</title><link>https://davidissamattos.github.io/receitas/massas/bread-pullman/</link><pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/receitas/massas/bread-pullman/</guid><description>Pão de forma estilo Pullman. Macio e de crescimento rápido.</description></item><item><title>Plot Panels in R (from brms models)</title><link>https://davidissamattos.github.io/post/2021/plot-panels-in-r/</link><pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/post/2021/plot-panels-in-r/</guid><description>&lt;p&gt;This week I had to make a panel with results from 5 different &lt;a href="http://paul-buerkner.github.io/brms/"&gt;&lt;code&gt;brms&lt;/code&gt;&lt;/a&gt; models in R. The &lt;code&gt;ggplot2&lt;/code&gt; allows you to do &lt;code&gt;facet_wraps&lt;/code&gt; to create a panel with multiple plots but it also requires that you have a well formated dataframe.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;brms&lt;/code&gt; provides some functions to create conditional effects plots. The plots are ready and can be easily customized with &lt;code&gt;ggplot2&lt;/code&gt;. While the package offers functions to retrieve the data frame, I did not want to recreate the plots. They were already fine.&lt;/p&gt;</description></item><item><title>Paper accepted at IEEE Transactions on Evolutionary Computation!</title><link>https://davidissamattos.github.io/post/2021/statscomp-accepted/</link><pubDate>Fri, 14 May 2021 00:00:00 +0000</pubDate><guid>https://davidissamattos.github.io/post/2021/statscomp-accepted/</guid><description>&lt;p&gt;I am happy to announce that our paper &amp;ldquo;Statistical Models for the Analysis of Optimization Algorithms with Benchmark Functions&amp;rdquo; by David Issa Mattos, Jan Bosch and Helena Holmström Olsson has been accepted for publication at the &lt;a href="https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235"&gt;IEEE Transactions on Evolutionary Computation&lt;/a&gt; (DOI:10.1109/TEVC.2021.3081167)!&lt;/p&gt;
 &lt;p&gt;The process took roughly 10 months with 3 revisions and has been accepted this week.&lt;/p&gt;
 &lt;p&gt;The abstract follows below and the pre-print can be found at &lt;a href="https://arxiv.org/pdf/2010.03783.pdf"&gt;https://arxiv.org/pdf/2010.03783.pdf&lt;/a&gt;&lt;/p&gt;

@@ -1,4 +1,904 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Musicxml on David's public blog</title><link>https://davidissamattos.github.io/tags/musicxml/</link><description>Recent content in Musicxml on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 16 Dec 2025 16:26:43 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/tags/musicxml/index.xml" rel="self" type="application/rss+xml"/><item><title>Notare</title><link>https://davidissamattos.github.io/post/2025/notare/</link><pubDate>Tue, 16 Dec 2025 16:26:43 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/notare/</guid><description>&lt;p&gt;Today, I release a command line utility to handle transformations and processing of music scores without opening them.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Musicxml on David's public blog</title><link>https://davidissamattos.github.io/tags/musicxml/</link><description>Recent content in Musicxml on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 18 Dec 2025 11:25:20 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/tags/musicxml/index.xml" rel="self" type="application/rss+xml"/><item><title>As Rosas Nao Falam</title><link>https://davidissamattos.github.io/music/as-rosas-nao-falam/</link><pubDate>Thu, 18 Dec 2025 11:25:20 +0100</pubDate><guid>https://davidissamattos.github.io/music/as-rosas-nao-falam/</guid><description>&lt;p&gt;Melodia e partitura de: As Rosas Não Falam - Cartola&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fAs%20Rosas%20N%c3%a3o%20Falam.musicxml&amp;title=As%20Rosas%20N%c3%a3o%20Falam" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/As Rosas Não Falam.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Preciso Me Encontrar</title><link>https://davidissamattos.github.io/music/preciso-me-encontrar/</link><pubDate>Thu, 18 Dec 2025 11:24:40 +0100</pubDate><guid>https://davidissamattos.github.io/music/preciso-me-encontrar/</guid><description>&lt;p&gt;Melodia e partitura de: Preciso Me Encontrar - Cartola&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fPreciso%20me%20encontar%20-%20Cartola.musicxml&amp;title=Preciso%20me%20encontar%20-%20Cartola" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/Preciso me encontar - Cartola.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Quem Sabe Isso Quer Dizer Amor</title><link>https://davidissamattos.github.io/music/quem-sabe-isso-quer-dizer-amor/</link><pubDate>Thu, 18 Dec 2025 11:24:02 +0100</pubDate><guid>https://davidissamattos.github.io/music/quem-sabe-isso-quer-dizer-amor/</guid><description>&lt;p&gt;Melodia e partitura de: Quem Sabe Isso Quer Dizer Amor - Milton Nascimento&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fQuem%20Sabe%20Isso%20Quer%20Dizer%20Amor.musicxml&amp;title=Quem%20Sabe%20Isso%20Quer%20Dizer%20Amor" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/Quem Sabe Isso Quer Dizer Amor.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>João E Maria</title><link>https://davidissamattos.github.io/music/joao-e-maria/</link><pubDate>Thu, 18 Dec 2025 11:22:42 +0100</pubDate><guid>https://davidissamattos.github.io/music/joao-e-maria/</guid><description>&lt;p&gt;Melodia e partitura de: João E Maria de Chico Buarque&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fJo%c3%a3o%20e%20Maria.musicxml&amp;title=Jo%c3%a3o%20e%20Maria" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/João e Maria.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Tocando em Frente - Almir Sater</title><link>https://davidissamattos.github.io/music/tocando-em-frente/</link><pubDate>Wed, 17 Dec 2025 16:11:43 +0100</pubDate><guid>https://davidissamattos.github.io/music/tocando-em-frente/</guid><description>&lt;p&gt;Melodia de &amp;ldquo;Tocando em Frente&amp;rdquo; de Almir Sater&lt;/p&gt;
+&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
+ 
+ &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fTocando%20em%20Frente.musicxml&amp;title=Tocando%20em%20frente%20-%20Almir%20sater" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
+ &lt;/a&gt;
+&lt;/div&gt;
+ &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ (function() {
+ const viewerOptions = {
+ hideTitle: false,
+ hideComposer: false,
+ hidePartName: false,
+ parts: "[]",
+ fromMeasure: 1 ,
+ toMeasure: null,
+ };
+ const hasMusicXMLFile = true;
+ const musicXMLPath = '\/music\/Tocando em Frente.musicxml';
+ const inlineMusicXML = null;
+
+ function getMusicXMLContent() {
+ if (hasMusicXMLFile) {
+ return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+ if (!response.ok) {
+ throw new Error('Unable to load MusicXML file: ' + response.statusText);
+ }
+ return response.text();
+ });
+ }
+ return Promise.resolve(inlineMusicXML);
+ }
+
+ function normalizeParts(parts) {
+ if (!parts) {
+ return [];
+ }
+ if (Array.isArray(parts)) {
+ return parts.filter(function(part) {
+ return typeof part === 'string' &amp;&amp; part.trim().length;
+ });
+ }
+ if (typeof parts === 'string') {
+ return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+ }
+ return [];
+ }
+
+ function filterMusicXMLParts(xmlString, parts) {
+ const normalizedParts = normalizeParts(parts);
+ if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+ return xmlString;
+ }
+ const parser = new DOMParser();
+ const doc = parser.parseFromString(xmlString, 'application/xml');
+ if (doc.getElementsByTagName('parsererror').length) {
+ console.warn('Unable to parse MusicXML, skipping part filtering.');
+ return xmlString;
+ }
+ const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+ function shouldKeepPart(partId, partName) {
+ return desiredParts.some(function(target) {
+ return partId === target || partName === target || partName.indexOf(target) !== -1;
+ });
+ }
+
+ const keptIds = new Set();
+ const scoreParts = doc.getElementsByTagName('score-part');
+ for (let i = scoreParts.length - 1; i &gt;= 0; i--) {
+ const scorePart = scoreParts[i];
+ const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+ const nameNode = scorePart.getElementsByTagName('part-name')[0];
+ const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+ if (shouldKeepPart(partId, nameText)) {
+ keptIds.add(scorePart.getAttribute('id'));
+ } else if (scorePart.parentNode) {
+ scorePart.parentNode.removeChild(scorePart);
+ }
+ }
+ if (!keptIds.size) {
+ console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+ return xmlString;
+ }
+ const partNodes = doc.getElementsByTagName('part');
+ for (let i = partNodes.length - 1; i &gt;= 0; i--) {
+ const partNode = partNodes[i];
+ if (!keptIds.has(partNode.getAttribute('id')) &amp;&amp; partNode.parentNode) {
+ partNode.parentNode.removeChild(partNode);
+ }
+ }
+ return new XMLSerializer().serializeToString(doc);
+ }
+
+ function buildPreviewOptions(options, previewMeasures) {
+ const config = {
+ drawTitle: false,
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ const startMeasure = Math.max(1, options.fromMeasure || 1);
+ config.drawFromMeasureNumber = startMeasure;
+ config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+ return config;
+ }
+
+ function buildFullOptions(options) {
+ const config = {
+ drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+ drawPartNames: !options.hidePartName,
+ drawComposer: !options.hideComposer,
+ drawLyricist: !options.hideComposer,
+ };
+ if (options.toMeasure &amp;&amp; options.toMeasure &gt; 0) {
+ config.drawUpToMeasureNumber = options.toMeasure;
+ }
+ return config;
+ }
+
+ function getPreviewEndMeasure(start, limit, previewMeasures) {
+ const previewMax = start + Math.max(0, previewMeasures - 1);
+ if (limit &amp;&amp; limit &gt; 0) {
+ return Math.min(previewMax, limit);
+ }
+ return previewMax;
+ }
+
+ function initOSMD() {
+ if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+ setTimeout(initOSMD, 100);
+ return;
+ }
+
+ const previewContainer = document.getElementById('osmd-1-preview');
+ const fullContainer = document.getElementById('osmd-1');
+ const detailsEl = document.getElementById('osmd-1-container');
+ const hasPreview = !!previewContainer;
+ const previewMeasures = 1 ;
+
+ let previewOSMD = null;
+ let previewPromise = null;
+ if (hasPreview) {
+ previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: false,
+ });
+ previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+ }
+
+ const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+ autoResize: true,
+ backend: "svg",
+ drawTitle: !viewerOptions.hideTitle,
+ });
+ osmd.setOptions(buildFullOptions(viewerOptions));
+
+ const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+ return filterMusicXMLParts(xml, viewerOptions.parts);
+ });
+
+ if (previewOSMD) {
+ previewPromise = xmlContentPromise.then(function(xml) {
+ return previewOSMD.load(xml);
+ });
+ }
+
+ const fullPromise = xmlContentPromise.then(function(xml) {
+ return osmd.load(xml);
+ });
+
+ if (previewPromise) {
+ previewPromise.then(function() {
+ previewOSMD.render();
+ }).catch(function(error) {
+ console.error('Error rendering preview MusicXML:', error);
+ previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Notare</title><link>https://davidissamattos.github.io/post/2025/notare/</link><pubDate>Tue, 16 Dec 2025 16:26:43 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/notare/</guid><description>&lt;p&gt;Today, I release a command line utility to handle transformations and processing of music scores without opening them.&lt;/p&gt;
 &lt;p&gt;I have been working with digitalization of trumpet resources, and that generates A LOT of files, and sometimes we need to modify and analyze them in bulk using scripts. Of course we can create python scripts for everything&amp;hellip; But instead I decided to create a command line tool to do that work in a more isolated manner. It is called &lt;code&gt;notare&lt;/code&gt; and can be installed with Python using pip. It works well on Windows/Linux/Mac (but I am only placing some Windows examples below)&lt;/p&gt;</description></item><item><title>Music Score Streamlit Component</title><link>https://davidissamattos.github.io/post/2025/music-score-streamlit-component/</link><pubDate>Wed, 19 Nov 2025 21:06:45 +0100</pubDate><guid>https://davidissamattos.github.io/post/2025/music-score-streamlit-component/</guid><description>&lt;p&gt;This week I released a new Python package in pip that allows you to display music sheets in Streamlit applications.&lt;/p&gt;
 &lt;p&gt;Pypi: &lt;a href="https://pypi.org/project/streamlit-music-score/"&gt;https://pypi.org/project/streamlit-music-score/&lt;/a&gt;
 Github: &lt;a href="https://github.com/davidissamattos/streamlit-music-score"&gt;https://github.com/davidissamattos/streamlit-music-score&lt;/a&gt;&lt;/p&gt;
