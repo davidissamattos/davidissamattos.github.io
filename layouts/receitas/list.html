@@ -1,0 +1,22 @@
+{{ define "main" }}
+<section class="recipes">
+  <h1>{{ .Title | default "Receitas" }}</h1>
+  {{ if .Params.summary }}<p class="section-summary">{{ .Params.summary }}</p>{{ end }}
+
+  <ul class="recipes-list">
+    {{ range .Pages.ByDate.Reverse }}
+      <li class="recipe-item">
+        <a href="{{ .Permalink }}" class="recipe-title">{{ .Title }}</a>
+        <div class="recipe-meta">
+          {{ with .Params.preparationTime }}<span><strong>Preparo:</strong> {{ . }}</span>{{ end }}
+          {{ with .Params.totalTime }}<span><strong>Total:</strong> {{ . }}</span>{{ end }}
+          {{ with .Params.portions }}<span><strong>Porções:</strong> {{ . }}</span>{{ end }}
+          {{ with .Params.mainCategory }}<span><strong>Categoria:</strong> {{ . }}</span>{{ end }}
+        </div>
+      </li>
+    {{ else }}
+      <li>Sem receitas ainda.</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

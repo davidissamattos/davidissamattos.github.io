@@ -1,48 +1,21 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
-Tags: ['music']
+Tags: ['music', "trumpet", "trompete","score","partitura","musicxml"]
 draft: false
 slug: "{{ .Name }}"
 ---
 
-```musicxml {file="/music/score.musicxml"}
-```
+Melodia e partitura de: {{ replace .Name "-" " " | title }}
 
-```musicxml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 3.1 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
-<score-partwise version="3.1">
-  <part-list>
-    <score-part id="P1">
-      <part-name>Music</part-name>
-    </score-part>
-  </part-list>
-  <part id="P1">
-    <measure number="1">
-      <attributes>
-        <divisions>1</divisions>
-        <key>
-          <fifths>0</fifths>
-        </key>
-        <time>
-          <beats>4</beats>
-          <beat-type>4</beat-type>
-        </time>
-        <clef>
-          <sign>G</sign>
-          <line>2</line>
-        </clef>
-      </attributes>
-      <note>
-        <pitch>
-          <step>C</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <type>whole</type>
-      </note>
-    </measure>
-  </part>
-</score-partwise>
-```
+{{< musicxml
+      title=""
+      file=""
+      preview="false"
+      fold="false"
+>}}
+{{< /musicxml >}}
+
+Video da música:
+
+{{< youtube  >}}

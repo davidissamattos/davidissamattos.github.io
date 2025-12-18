@@ -1,0 +1,40 @@
+{{ define "main" }}
+<article class="recipe">
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ if .Params.summary }}
+    <p class="recipe-summary">{{ .Params.summary }}</p>
+    {{ end }}
+    <div class="recipe-meta">
+      {{ with .Params.preparationTime }}<span><strong>Preparo:</strong> {{ . }}</span>{{ end }}
+      {{ with .Params.totalTime }}<span><strong>Total:</strong> {{ . }}</span>{{ end }}
+      {{ with .Params.portions }}<span><strong>Porções:</strong> {{ . }}</span>{{ end }}
+      {{ with .Params.mainCategory }}<span><strong>Categoria:</strong> {{ . }}</span>{{ end }}
+      {{ if .Params.tags }}
+        <span><strong>Tags:</strong>
+          {{ range $i, $t := .Params.tags }}{{ if $i }}, {{ end }}{{ $t }}{{ end }}
+        </span>
+      {{ end }}
+    </div>
+    {{ with .Params.images }}
+      {{ if gt (len .) 0 }}
+        <figure class="recipe-image">
+          <img src="{{ index . 0 }}" alt="{{ $.Title }}" />
+        </figure>
+      {{ end }}
+    {{ end }}
+  </header>
+
+  <content>
+    {{ .Content }}
+  </content>
+
+  <footer>
+    <p class="recipe-tags">
+      {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+      {{ end }}
+    </p>
+  </footer>
+</article>
+{{ end }}

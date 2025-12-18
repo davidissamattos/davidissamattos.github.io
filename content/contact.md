@@ -34,4 +34,6 @@ Some of my repos to check out are:
 
 * The R bpcs package: https://github.com/davidissamattos/bpcs
 * The streamlit music score component: https://github.com/davidissamattos/streamlit-music-score
+* Hugo musicxml shortcode: https://github.com/davidissamattos/hugo-musicxml-shortcode
+* Notare (music score transformation on the command line): https://github.com/davidissamattos/notare
 * The Open Arban-Clarke project (still work in progress to be published soon): https://github.com/davidissamattos/the-open-arban-clarke-project

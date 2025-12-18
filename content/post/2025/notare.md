@@ -60,3 +60,8 @@ type tests\data\c_scale.musicxml | notare set-metadata --composer "J. Doe" | not
 # Analysis of metrics on the score
 type tests\data\MozartPianoSonata.musicxml | notare analyze
 ```
+
+
+**More functionality is coming**
+
+I will keep adding in this post additional functionality!
