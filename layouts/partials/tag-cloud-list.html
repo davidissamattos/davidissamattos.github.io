@@ -29,4 +29,4 @@
   {{- $terms = $terms | append $p2 -}}
 {{- end -}}
 
-<small class="tag-cloud">{{- range sort $terms "LinkTitle" -}}<a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>&nbsp;{{- end -}}</small>
+<small class="tag-cloud" style="display:flex;flex-wrap:wrap;gap:0.25rem 0.5rem">{{- range sort $terms "LinkTitle" -}}<a href="{{ .Permalink }}" style="display:inline-block">#{{ .LinkTitle }}</a>{{- end -}}</small>
