@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cartola on David's public blog</title><link>https://davidissamattos.github.io/tags/cartola/</link><description>Recent content in Cartola on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 18 Dec 2025 11:25:20 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/tags/cartola/index.xml" rel="self" type="application/rss+xml"/><item><title>As Rosas Nao Falam</title><link>https://davidissamattos.github.io/music/as-rosas-nao-falam/</link><pubDate>Thu, 18 Dec 2025 11:25:20 +0100</pubDate><guid>https://davidissamattos.github.io/music/as-rosas-nao-falam/</guid><description>&lt;p&gt;Melodia e partitura de: As Rosas Não Falam - Cartola&lt;/p&gt;
 &lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
- 
  &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
  &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fAs%20Rosas%20N%c3%a3o%20Falam.musicxml&amp;title=As%20Rosas%20N%c3%a3o%20Falam" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
  &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
  &lt;/a&gt;
-&lt;/div&gt;
+ &lt;/div&gt;
  &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
 
 &lt;script&gt;
@@ -180,12 +179,11 @@
  console.error('Error rendering preview MusicXML:', error);
  previewContainer.innerHTML = '&lt;p style="color: red;"&gt;Error rendering preview&lt;/p&gt;</description></item><item><title>Preciso Me Encontrar</title><link>https://davidissamattos.github.io/music/preciso-me-encontrar/</link><pubDate>Thu, 18 Dec 2025 11:24:40 +0100</pubDate><guid>https://davidissamattos.github.io/music/preciso-me-encontrar/</guid><description>&lt;p&gt;Melodia e partitura de: Preciso Me Encontrar - Cartola&lt;/p&gt;
 &lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
- 
  &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
  &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fPreciso%20me%20encontar%20-%20Cartola.musicxml&amp;title=Preciso%20me%20encontar%20-%20Cartola" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
  &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
  &lt;/a&gt;
-&lt;/div&gt;
+ &lt;/div&gt;
  &lt;div id="osmd-1" class="osmd-viewer musicxml-full"&gt;&lt;/div&gt;
 
 &lt;script&gt;
