@@ -29,12 +29,6 @@
     {{ .Content }}
   </content>
 
-  <footer>
-    <p class="recipe-tags">
-      {{ range (.GetTerms "tags") }}
-        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
-      {{ end }}
-    </p>
-  </footer>
+{{ partial "tag-cloud-singles.html" . }}
 </article>
 {{ end }}

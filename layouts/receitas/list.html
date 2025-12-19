@@ -1,6 +1,11 @@
 {{ define "main" }}
 <section class="recipes">
   <h1>{{ .Title | default "Receitas" }}</h1>
+  {{ with .Content }}
+  <div class="list-intro">
+    {{ . }}
+  </div>
+  {{ end }}
   {{ if .Params.summary }}<p class="section-summary">{{ .Params.summary }}</p>{{ end }}
 
   <ul class="recipes-list">
@@ -18,5 +23,11 @@
       <li>Sem receitas ainda.</li>
     {{ end }}
   </ul>
+
+  {{ if not .Data.Singular }}
+  {{ partial "tag-cloud-list.html" (dict "page" . "recursive" true) }}
+  {{ end }}
 </section>
 {{ end }}
+
+

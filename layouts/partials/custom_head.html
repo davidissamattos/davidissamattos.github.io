@@ -1,6 +1,3 @@
-<!-- OpenSheetMusicDisplay Library for MusicXML rendering -->
-<script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.2/build/opensheetmusicdisplay.min.js"></script>
-
 <!-- Force the Bear theme to stay in light mode even when the OS prefers dark -->
 <style>
   :root {
@@ -18,15 +15,3 @@
     }
   }
 </style>
-
-{{/* Widen content area on music pages (or when page sets params.wide) */}}
-{{ if or (eq .Section "music") (.Params.wide) }}
-<style>
-  /* Increase the Bear theme page width for music content.
-     Leaves ~32px padding on each side and caps at 1200px. */
-  :root { --width: min(calc(100vw - 64px), 1200px); }
-
-  /* Ensure OSMD containers can use the available width */
-  .musicxml-container, .osmd-viewer { width: 100%; }
-</style>
-{{ end }}

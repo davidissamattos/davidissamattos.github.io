@@ -1,0 +1,7 @@
+  <small>
+    <p class="singles-tags">
+      {{ range (.GetTerms "tags") }}
+        <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+      {{ end }}
+    </p>
+</small>

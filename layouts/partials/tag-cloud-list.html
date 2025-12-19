@@ -1,0 +1,32 @@
+{{/*
+  Partial: tag-cloud-list
+  Usage:
+    {{ partial "tag-cloud-list.html" (dict "page" . "recursive" true) }}
+  Params:
+    - page: the current list/section page context (required)
+    - recursive: bool, include nested regular pages (default: false)
+*/}}
+{{- $p := .page -}}
+{{- $recursive := or .recursive false -}}
+
+{{- $termMap := dict -}}
+{{- if $recursive -}}
+  {{- range $p.RegularPagesRecursive -}}
+    {{- range (.GetTerms "tags") -}}
+      {{- $termMap = merge $termMap (dict .RelPermalink .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- range $p.Pages -}}
+    {{- range (.GetTerms "tags") -}}
+      {{- $termMap = merge $termMap (dict .RelPermalink .) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $terms := slice -}}
+{{- range $url, $p2 := $termMap -}}
+  {{- $terms = $terms | append $p2 -}}
+{{- end -}}
+
+<small class="tag-cloud">{{- range sort $terms "LinkTitle" -}}<a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>&nbsp;{{- end -}}</small>

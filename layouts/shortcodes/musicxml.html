@@ -1,0 +1,477 @@
+{{- if not ($.Page.Scratch.Get "musicxml-osmd-loaded") -}}
+<script src="/js/osmd/opensheetmusicdisplay.min.js"></script>
+{{- $.Page.Scratch.Set "musicxml-osmd-loaded" true -}}
+{{- end -}}
+
+{{- $id := printf "osmd-%d" (add 1 .Ordinal) -}}
+{{- $params := .Params -}}
+{{- $isMusicXMLFile := false -}}
+{{- $scoreTitle := "View full score" -}}
+{{- $hiddenMetadataKeys := slice "file" "title" "fold" "preview" "previewMeasures" "flat" "hideTitle" "hideComposer" "hidePartName" "part" "fromMeasure" "toMeasure" -}}
+{{- $falsey := slice "false" "0" "no" "off" -}}
+{{- $showPreview := true -}}
+{{- $isFoldable := true -}}
+{{- $previewMeasures := 4 -}}
+{{- $showFlat := true -}}
+{{- $hideTitle := false -}}
+{{- $hideComposer := false -}}
+{{- $hidePartName := false -}}
+{{- $partNames := slice -}}
+{{- $fromMeasure := 1 -}}
+{{- $toMeasure := 0 -}}
+
+{{- $shortcodePreview := .Get "preview" -}}
+{{- if ne $shortcodePreview nil -}}
+  {{- $previewVal := lower (printf "%v" $shortcodePreview) -}}
+  {{- if in $falsey $previewVal -}}
+    {{- $showPreview = false -}}
+  {{- else -}}
+    {{- $showPreview = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $shortcodeFold := .Get "fold" -}}
+{{- if ne $shortcodeFold nil -}}
+  {{- $foldVal := lower (printf "%v" $shortcodeFold) -}}
+  {{- if in $falsey $foldVal -}}
+    {{- $isFoldable = false -}}
+  {{- else -}}
+    {{- $isFoldable = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $shortcodePreviewMeasures := .Get "previewMeasures" -}}
+{{- if ne $shortcodePreviewMeasures nil -}}
+  {{- $previewMeasures = int $shortcodePreviewMeasures -}}
+{{- end -}}
+
+{{- $shortcodeFlat := .Get "flat" -}}
+{{- if ne $shortcodeFlat nil -}}
+  {{- $flatVal := lower (printf "%v" $shortcodeFlat) -}}
+  {{- if in $falsey $flatVal -}}
+    {{- $showFlat = false -}}
+  {{- else -}}
+    {{- $showFlat = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Get "hideTitle" -}}
+  {{- $val := lower (printf "%v" .) -}}
+  {{- if in $falsey $val -}}
+    {{- $hideTitle = false -}}
+  {{- else -}}
+    {{- $hideTitle = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Get "hideComposer" -}}
+  {{- $val := lower (printf "%v" .) -}}
+  {{- if in $falsey $val -}}
+    {{- $hideComposer = false -}}
+  {{- else -}}
+    {{- $hideComposer = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Get "hidePartName" -}}
+  {{- $val := lower (printf "%v" .) -}}
+  {{- if in $falsey $val -}}
+    {{- $hidePartName = false -}}
+  {{- else -}}
+    {{- $hidePartName = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Get "fromMeasure" -}}
+  {{- $val := int . -}}
+  {{- if lt $val 1 -}}
+    {{- $val = 1 -}}
+  {{- end -}}
+  {{- $fromMeasure = $val -}}
+{{- end -}}
+
+{{- with .Get "toMeasure" -}}
+  {{- $val := int . -}}
+  {{- if lt $val 1 -}}
+    {{- $val = 0 -}}
+  {{- end -}}
+  {{- $toMeasure = $val -}}
+{{- end -}}
+
+{{- with .Get "part" -}}
+  {{- $raw := printf "%v" . -}}
+  {{- $tokens := split $raw "," -}}
+  {{- range $tokens }}
+    {{- $trimmed := trim . " \t\r\n" -}}
+    {{- if $trimmed }}
+      {{- $partNames = append $partNames $trimmed -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if lt $previewMeasures 1 -}}
+  {{- $previewMeasures = 1 -}}
+{{- end -}}
+
+{{- $summaryLabel := "Expand preview" -}}
+{{- if not $showPreview -}}
+  {{- $summaryLabel = "Expand score" -}}
+{{- end -}}
+
+{{- with .Get "file" -}}
+  {{- $isMusicXMLFile = true -}}
+{{- end -}}
+
+{{- with .Get "title" -}}
+  {{- $scoreTitle = . -}}
+{{- end -}}
+
+<div class="musicxml-metadata">
+  {{- range $key, $value := $params }}
+    {{- if and (not (in $hiddenMetadataKeys $key)) (ne $value nil) }}
+    <div class="musicxml-attribute">
+      <span class="musicxml-attribute-key">{{ $key }}:</span>
+      <span class="musicxml-attribute-value">{{ $value }}</span>
+    </div>
+    {{- end }}
+  {{- end }}
+  {{- if and $showFlat $isMusicXMLFile }}
+  <div class="musicxml-summary-break"></div>
+  <a href="https://flat.io/score/import-url?url={{ .Get "file" }}&title={{ $scoreTitle }}" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link">
+    <img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat">
+  </a>
+  {{- end }}
+  </div>
+{{- if $isFoldable }}
+<details class="musicxml-container" id="{{ $id }}-container">
+  <summary class="musicxml-summary">
+    <span class="musicxml-summary-label">{{ $summaryLabel }}</span>
+    {{- if $showPreview }}
+    <div class="musicxml-summary-break"></div>
+    <div id="{{ $id }}-preview" class="osmd-viewer musicxml-preview"></div>
+    {{- end }}
+  </summary>
+  <div id="{{ $id }}" class="osmd-viewer musicxml-full"></div>
+</details>
+{{- else }}
+  {{- if $showPreview }}
+  <div class="musicxml-preview-standalone">
+    <span class="musicxml-preview-label">Preview</span>
+    <div id="{{ $id }}-preview" class="osmd-viewer musicxml-preview"></div>
+  </div>
+  {{- end }}
+  <div id="{{ $id }}" class="osmd-viewer musicxml-full"></div>
+{{- end }}
+
+<script>
+  (function() {
+    const viewerOptions = {
+      hideTitle: {{ if $hideTitle }}true{{ else }}false{{ end }},
+      hideComposer: {{ if $hideComposer }}true{{ else }}false{{ end }},
+      hidePartName: {{ if $hidePartName }}true{{ else }}false{{ end }},
+      parts: {{ $partNames | jsonify }},
+      fromMeasure: {{ $fromMeasure }},
+      toMeasure: {{ if gt $toMeasure 0 }}{{ $toMeasure }}{{ else }}null{{ end }},
+    };
+    const hasMusicXMLFile = {{ if $isMusicXMLFile }}true{{ else }}false{{ end }};
+    const musicXMLPath = {{ if $isMusicXMLFile }}'{{ .Get "file" }}'{{ else }}null{{ end }};
+    const inlineMusicXML = {{ if not $isMusicXMLFile }}`{{ .Inner | safeJS }}`{{ else }}null{{ end }};
+
+    function getMusicXMLContent() {
+      if (hasMusicXMLFile) {
+        return fetch(musicXMLPath, { credentials: 'same-origin' }).then(function(response) {
+          if (!response.ok) {
+            throw new Error('Unable to load MusicXML file: ' + response.statusText);
+          }
+          return response.text();
+        });
+      }
+      return Promise.resolve(inlineMusicXML);
+    }
+
+    function normalizeParts(parts) {
+      if (!parts) {
+        return [];
+      }
+      if (Array.isArray(parts)) {
+        return parts.filter(function(part) {
+          return typeof part === 'string' && part.trim().length;
+        });
+      }
+      if (typeof parts === 'string') {
+        return parts.split(',').map(function(part) { return part.trim(); }).filter(function(part) { return part.length; });
+      }
+      return [];
+    }
+
+    function filterMusicXMLParts(xmlString, parts) {
+      const normalizedParts = normalizeParts(parts);
+      if (!normalizedParts.length || typeof DOMParser === 'undefined' || typeof XMLSerializer === 'undefined') {
+        return xmlString;
+      }
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(xmlString, 'application/xml');
+      if (doc.getElementsByTagName('parsererror').length) {
+        console.warn('Unable to parse MusicXML, skipping part filtering.');
+        return xmlString;
+      }
+      const desiredParts = normalizedParts.map(function(part) { return part.toLowerCase(); });
+
+      function shouldKeepPart(partId, partName) {
+        return desiredParts.some(function(target) {
+          return partId === target || partName === target || partName.indexOf(target) !== -1;
+        });
+      }
+
+      const keptIds = new Set();
+      const scoreParts = doc.getElementsByTagName('score-part');
+      for (let i = scoreParts.length - 1; i >= 0; i--) {
+        const scorePart = scoreParts[i];
+        const partId = (scorePart.getAttribute('id') || '').toLowerCase();
+        const nameNode = scorePart.getElementsByTagName('part-name')[0];
+        const nameText = (nameNode ? nameNode.textContent : '').trim().toLowerCase();
+        if (shouldKeepPart(partId, nameText)) {
+          keptIds.add(scorePart.getAttribute('id'));
+        } else if (scorePart.parentNode) {
+          scorePart.parentNode.removeChild(scorePart);
+        }
+      }
+      if (!keptIds.size) {
+        console.warn('No matching parts found for filter "' + normalizedParts.join(', ') + '", rendering full score.');
+        return xmlString;
+      }
+      const partNodes = doc.getElementsByTagName('part');
+      for (let i = partNodes.length - 1; i >= 0; i--) {
+        const partNode = partNodes[i];
+        if (!keptIds.has(partNode.getAttribute('id')) && partNode.parentNode) {
+          partNode.parentNode.removeChild(partNode);
+        }
+      }
+      return new XMLSerializer().serializeToString(doc);
+    }
+
+    function buildPreviewOptions(options, previewMeasures) {
+      const config = {
+        drawTitle: false,
+        drawPartNames: !options.hidePartName,
+        drawComposer: !options.hideComposer,
+        drawLyricist: !options.hideComposer,
+      };
+      const startMeasure = Math.max(1, options.fromMeasure || 1);
+      config.drawFromMeasureNumber = startMeasure;
+      config.drawUpToMeasureNumber = getPreviewEndMeasure(startMeasure, options.toMeasure, previewMeasures);
+      return config;
+    }
+
+    function buildFullOptions(options) {
+      const config = {
+        drawFromMeasureNumber: Math.max(1, options.fromMeasure || 1),
+        drawPartNames: !options.hidePartName,
+        drawComposer: !options.hideComposer,
+        drawLyricist: !options.hideComposer,
+      };
+      if (options.toMeasure && options.toMeasure > 0) {
+        config.drawUpToMeasureNumber = options.toMeasure;
+      }
+      return config;
+    }
+
+    function getPreviewEndMeasure(start, limit, previewMeasures) {
+      const previewMax = start + Math.max(0, previewMeasures - 1);
+      if (limit && limit > 0) {
+        return Math.min(previewMax, limit);
+      }
+      return previewMax;
+    }
+
+    function initOSMD() {
+      if (typeof opensheetmusicdisplay === 'undefined' || !opensheetmusicdisplay.OpenSheetMusicDisplay) {
+        setTimeout(initOSMD, 100);
+        return;
+      }
+
+      const previewContainer = document.getElementById('{{ $id }}-preview');
+      const fullContainer = document.getElementById('{{ $id }}');
+      const detailsEl = document.getElementById('{{ $id }}-container');
+      const hasPreview = !!previewContainer;
+      const previewMeasures = {{ $previewMeasures }};
+
+      let previewOSMD = null;
+      let previewPromise = null;
+      if (hasPreview) {
+        previewOSMD = new opensheetmusicdisplay.OpenSheetMusicDisplay(previewContainer, {
+          autoResize: true,
+          backend: "svg",
+          drawTitle: false,
+        });
+        previewOSMD.setOptions(buildPreviewOptions(viewerOptions, previewMeasures));
+      }
+
+      const osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay(fullContainer, {
+        autoResize: true,
+        backend: "svg",
+        drawTitle: !viewerOptions.hideTitle,
+      });
+      osmd.setOptions(buildFullOptions(viewerOptions));
+
+      const xmlContentPromise = getMusicXMLContent().then(function(xml) {
+        return filterMusicXMLParts(xml, viewerOptions.parts);
+      });
+
+      if (previewOSMD) {
+        previewPromise = xmlContentPromise.then(function(xml) {
+          return previewOSMD.load(xml);
+        });
+      }
+
+      const fullPromise = xmlContentPromise.then(function(xml) {
+        return osmd.load(xml);
+      });
+
+      if (previewPromise) {
+        previewPromise.then(function() {
+          previewOSMD.render();
+        }).catch(function(error) {
+          console.error('Error rendering preview MusicXML:', error);
+          previewContainer.innerHTML = '<p style="color: red;">Error rendering preview</p>';
+        });
+      }
+
+      if (fullPromise) {
+        fullPromise.then(function() {
+          osmd.render();
+        }).catch(function(error) {
+          console.error('Error rendering MusicXML:', error);
+          fullContainer.innerHTML = '<p style="color: red;">Error rendering score</p>';
+        });
+      }
+
+      if (detailsEl && previewContainer) {
+        detailsEl.addEventListener('toggle', function() {
+          if (detailsEl.open) {
+            previewContainer.classList.add('musicxml-hidden');
+          } else {
+            previewContainer.classList.remove('musicxml-hidden');
+          }
+        });
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initOSMD);
+    } else {
+      initOSMD();
+    }
+  })();
+</script>
+
+<style>
+  .musicxml-container {
+    margin-top: 1rem;
+    background-color: #fffef9;
+    border-radius: 6px;
+    border: 1px solid #e0ddd2;
+    overflow: hidden;
+  }
+
+  .musicxml-container[open] {
+    padding-bottom: 0.75rem;
+  }
+
+  .musicxml-summary {
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    padding: 0.5rem;
+  }
+
+  .musicxml-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .musicxml-summary::before {
+    content: "▶";
+    display: inline-block;
+    margin-top: 0.4rem;
+    transition: transform 0.2s ease;
+  }
+
+  .musicxml-container[open] .musicxml-summary::before {
+    transform: rotate(90deg);
+  }
+
+  .musicxml-summary-label {
+    font-weight: 600;
+    margin-top: 0.2rem;
+    min-width: 120px;
+  }
+
+  .musicxml-summary-break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+  .musicxml-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .musicxml-attribute {
+    font-size: 0.9rem;
+    flex-basis: 100%;
+  }
+
+  .musicxml-attribute-key {
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-right: 0.25rem;
+  }
+
+  .osmd-viewer {
+    min-height: 200px;
+    width: 100%;
+  }
+
+  .musicxml-preview {
+    min-height: 120px;
+    flex: 1;
+  }
+
+  .musicxml-preview-standalone {
+    margin-top: 1rem;
+    padding: 0.5rem 0.75rem 0.75rem;
+    background-color: #fff;
+    border: 1px solid #e0ddd2;
+    border-radius: 6px;
+  }
+
+  .musicxml-preview-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .musicxml-hidden {
+    display: none;
+  }
+
+  .musicxml-full {
+    margin-top: 0.75rem;
+    background-color: #fff;
+    border: 1px solid #e0ddd2;
+  }
+
+  /* Expand only MusicXML blocks while keeping page layout intact */
+  .musicxml-container,
+  .osmd-viewer.musicxml-full {
+    width: min(1200px, calc(100vw - 64px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+</style>

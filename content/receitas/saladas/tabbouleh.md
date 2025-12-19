@@ -5,7 +5,7 @@ preparationTime: "20 min"
 totalTime: "40 min"
 portions: "Acompanhamento para 6 refeicoes"
 mainCategory: ""
-tags: ["receitas","saladas"]
+tags: ["receitas","saladas", "hortela", "salsinha", "trigo","bulgur"]
 images: []
 ---
 
@@ -18,7 +18,7 @@ images: []
 - 1/2 colher de chá de coentro em pó  
 - 1 pitada de canela  
 - 1-2 maços de salsinha picada
-~~- 1 xícara de pepino inglês em cubos  ~~
+- ~~ 1 xícara de pepino inglês em cubos  ~~
 - 1 xícara de tomate sem sementes em cubos  
 - 1 xícara de trigo para quibe/bulgur  
 - 1/2 xícara de hortelã fresca picada finamente  
