@@ -9,7 +9,7 @@ The only limitation is that it requires the MusicXML notation, which is pretty s
 <a href=/contact/>Contact</a></nav></header><main><content><p>As I wanted to create more posts that are music related and not only programming related, I created a Hugo hook that allows me to display music scores in this blog. I haven&rsquo;t tested that extensively with highly complex scores, but I suppose it works fine as it uses OSMD as the backend music engine.</p><p>The only limitation is that it requires the MusicXML notation, which is pretty standard when sharing scores across applications. Your editing software likely can export to musicxml.</p><p>Let&rsquo;s get to the hook. It is a simple codeblock with musicxml. It supports direct paste of the xml as well as linking to a file in your assets folder</p><h2 id=using-the-hook>Using the hook</h2><h3 id=method-1-link-to-a-musicxml-file>Method 1: Link to a MusicXML file</h3><p>Place your <code>.musicxml</code> or <code>.xml</code> file in the <code>static/</code> folder (e.g., <code>static/music/score.musicxml</code>), then reference it in your markdown:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span>``<span style=color:#e6db74>`musicxml {file=&#34;/music/score.musicxml&#34;}
 </span></span></span><span style=display:flex><span><span style=color:#e6db74>`</span>``
 </span></span></code></pre></div><h3 id=method-2-inline-musicxml-content>Method 2: Inline MusicXML content</h3><p>Paste the MusicXML content directly in the code block:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-markdown data-lang=markdown><span style=display:flex><span><span style=color:#e6db74>```musicxml
-</span></span></span><span style=display:flex><span><span style=color:#e6db74></span>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+</span></span></span><span style=display:flex><span>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
 </span></span><span style=display:flex><span>&lt;!DOCTYPE score-partwise PUBLIC &#34;-//Recordare//DTD MusicXML 3.1 Partwise//EN&#34; &#34;http://www.musicxml.org/dtds/partwise.dtd&#34;&gt;
 </span></span><span style=display:flex><span>&lt;score-partwise version=&#34;3.1&#34;&gt;
 </span></span><span style=display:flex><span>  &lt;part-list&gt;
@@ -64,7 +64,7 @@ The only limitation is that it requires the MusicXML notation, which is pretty s
 </span></span><span style=display:flex><span><span style=color:#f92672>&lt;</span><span style=color:#a6e22e>script</span><span style=color:#f92672>&gt;</span>
 </span></span><span style=display:flex><span>  (<span style=color:#66d9ef>function</span>() {
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Wait for OSMD to be available
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initOSMD</span>() {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>initOSMD</span>() {
 </span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#66d9ef>typeof</span> <span style=color:#a6e22e>opensheetmusicdisplay</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;undefined&#39;</span> <span style=color:#f92672>||</span> <span style=color:#f92672>!</span><span style=color:#a6e22e>opensheetmusicdisplay</span>.<span style=color:#a6e22e>OpenSheetMusicDisplay</span>) {
 </span></span><span style=display:flex><span>        <span style=color:#a6e22e>setTimeout</span>(<span style=color:#a6e22e>initOSMD</span>, <span style=color:#ae81ff>100</span>);
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span>;
@@ -79,7 +79,7 @@ The only limitation is that it requires the MusicXML notation, which is pretty s
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>      {{<span style=color:#f92672>-</span> <span style=color:#66d9ef>if</span> <span style=color:#a6e22e>$isMusicXMLFile</span> }}
 </span></span><span style=display:flex><span>      <span style=color:#75715e>// Load from file
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>musicXMLPath</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;{{ $attributes.file }}&#39;</span>;
+</span></span></span><span style=display:flex><span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>musicXMLPath</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;{{ $attributes.file }}&#39;</span>;
 </span></span><span style=display:flex><span>      <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>load</span>(<span style=color:#a6e22e>musicXMLPath</span>).<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>function</span>() {
 </span></span><span style=display:flex><span>        <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>render</span>();
 </span></span><span style=display:flex><span>      }).<span style=color:#66d9ef>catch</span>(<span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>error</span>) {
@@ -88,7 +88,7 @@ The only limitation is that it requires the MusicXML notation, which is pretty s
 </span></span><span style=display:flex><span>      });
 </span></span><span style=display:flex><span>      {{<span style=color:#f92672>-</span> <span style=color:#66d9ef>else</span> }}
 </span></span><span style=display:flex><span>      <span style=color:#75715e>// Load from inline content
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>musicXML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`{{ .Inner | safeJS }}`</span>;
+</span></span></span><span style=display:flex><span>      <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>musicXML</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`{{ .Inner | safeJS }}`</span>;
 </span></span><span style=display:flex><span>      <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>load</span>(<span style=color:#a6e22e>musicXML</span>).<span style=color:#a6e22e>then</span>(<span style=color:#66d9ef>function</span>() {
 </span></span><span style=display:flex><span>        <span style=color:#a6e22e>osmd</span>.<span style=color:#a6e22e>render</span>();
 </span></span><span style=display:flex><span>      }).<span style=color:#66d9ef>catch</span>(<span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>error</span>) {
@@ -99,7 +99,7 @@ The only limitation is that it requires the MusicXML notation, which is pretty s
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    <span style=color:#75715e>// Start initialization
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>if</span> (document.<span style=color:#a6e22e>readyState</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;loading&#39;</span>) {
+</span></span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (document.<span style=color:#a6e22e>readyState</span> <span style=color:#f92672>===</span> <span style=color:#e6db74>&#39;loading&#39;</span>) {
 </span></span><span style=display:flex><span>      document.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#e6db74>&#39;DOMContentLoaded&#39;</span>, <span style=color:#a6e22e>initOSMD</span>);
 </span></span><span style=display:flex><span>    } <span style=color:#66d9ef>else</span> {
 </span></span><span style=display:flex><span>      <span style=color:#a6e22e>initOSMD</span>();
