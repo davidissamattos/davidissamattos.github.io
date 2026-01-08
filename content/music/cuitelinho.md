@@ -9,7 +9,7 @@ slug: "cuitelinho"
 
 {{< musicxml
       title="cuitelinho"
-      file="/music/cuitelinho.musicxml"
+      file="/music/Cuitelinho.musicxml"
       preview="false"
       fold="false"
 >}}
