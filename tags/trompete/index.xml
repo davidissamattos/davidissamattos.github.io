@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Trompete on David's public blog</title><link>https://davidissamattos.github.io/tags/trompete/</link><description>Recent content in Trompete on David's public blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 25 Dec 2025 12:00:00 +0100</lastBuildDate><atom:link href="https://davidissamattos.github.io/tags/trompete/index.xml" rel="self" type="application/rss+xml"/><item><title>Cuitelinho</title><link>https://davidissamattos.github.io/music/cuitelinho/</link><pubDate>Thu, 25 Dec 2025 12:00:00 +0100</pubDate><guid>https://davidissamattos.github.io/music/cuitelinho/</guid><description>&lt;script src="https://davidissamattos.github.io/js/osmd/opensheetmusicdisplay.min.js"&gt;&lt;/script&gt;&lt;div class="musicxml-metadata"&gt;
  &lt;div class="musicxml-summary-break"&gt;&lt;/div&gt;
- &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fcuitelinho.musicxml&amp;title=cuitelinho" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
+ &lt;a href="https://flat.io/score/import-url?url=%2fmusic%2fCuitelinho.musicxml&amp;title=cuitelinho" target="_blank" rel="noopener noreferrer" class="musicxml-flat-link"&gt;
  &lt;img src="https://flat.io/img/assets/add-to-flat-white.svg" alt="Add to Flat"&gt;
  &lt;/a&gt;
  &lt;/div&gt;
@@ -17,7 +17,7 @@
  toMeasure: null,
  };
  const hasMusicXMLFile = true;
- const musicXMLPath = '\/music\/cuitelinho.musicxml';
+ const musicXMLPath = '\/music\/Cuitelinho.musicxml';
  const inlineMusicXML = null;
 
  function getMusicXMLContent() {
